@@ -1,0 +1,10 @@
+{
+    "Template": {
+      "TemplateName": "ValidateAccount",
+      "SubjectPart": "Stock Knowledge - Account Validation",
+      "HtmlPart": "<p>Dear {{name}},\r\n</p><p>Thank you for registering to Stock Knowledge!\r\n</p><p>Your validation code is <b>{{code}}</b>.\r\n</p><p>Sincerely,</p><p>The Stock Knowledge Team</p>",
+      "TextPart": "<p>Dear {{name}},\r\n</p><p>Thank you for registering to Stock Knowledge!\r\n</p><p>Your validation code is <b>{{code}}</b>.\r\n</p><p>Sincerely,</p><p>The Stock Knowledge Team</p>"
+    }
+  }
+
+  
