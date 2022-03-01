@@ -1,8 +1,0 @@
-{
-    "Template": {
-      "TemplateName": "RequestDemo",
-      "SubjectPart": "Stock Knowledge - Request a Demo",
-      "HtmlPart": "<p>Name: {{name}}</p><br /> <br /><p>Email: {{email}}</p><br /><br /><br /><p>Message: {{message}}</p>",
-      "TextPart": "<p>Name: {{name}}</p><br /> <br /><p>Email: {{email}}</p><br /><br /><br /><p>Message: {{message}}</p>"
-    }
-}

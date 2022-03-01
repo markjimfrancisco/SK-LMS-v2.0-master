@@ -13,11 +13,19 @@ export default function TextField({
   disabled
 }) {
   const [invalidInput, setInvalidInput] = useState(false);
+  const [incompleteInput, setIncompleteInput] = useState(false);
+
 
   useEffect(() => {
     if (value.match(/^[A-Za-z ]*/)[0] != value) {
       setInvalidInput(true);
     } else setInvalidInput(false);
+  }, [value]);
+
+  useEffect(() => {
+    if (value.length == 1) {
+      setIncompleteInput(true);
+    } else setIncompleteInput(false);
   }, [value]);
 
   return (
@@ -37,6 +45,14 @@ export default function TextField({
           message="Only alphabet are accepted in this input."
         />
       )}
+
+      {alert && incompleteInput && (
+        <FieldAlert
+          classNames="w-full mt-2 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+          message="Minimum of 2 letters are accepted in this input."
+        />
+      )} 
+      
     </>
   );
 }

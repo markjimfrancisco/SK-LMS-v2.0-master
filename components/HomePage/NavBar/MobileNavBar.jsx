@@ -61,7 +61,7 @@ const MobileNavbar = (props) => {
     const [float, setFloat] = useState(false);
 
     const handler = useCallback((e) =>{
-        if(window.pageYOffset >= ref.current.offsetTop)
+        if(window.pageYOffset > ref.current.offsetTop)
             setFloat(true);
         else
             setFloat(false);

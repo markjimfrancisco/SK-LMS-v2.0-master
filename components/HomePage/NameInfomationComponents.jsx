@@ -23,7 +23,10 @@ const NameInfomationComponents = ({
       lastName &&
       firstName.match(/^[A-Za-z ]*/)[0] == firstName &&
       middleName.match(/^[A-Za-z ]*/)[0] == middleName &&
-      lastName.match(/^[A-Za-z ]*/)[0] == lastName
+      lastName.match(/^[A-Za-z ]*/)[0] == lastName &&
+      firstName.length >= 2 &&
+      middleName.length >= 2 &&
+      lastName.length >= 2
     ) {
       setDisable(false);
     } else setDisable(true);
@@ -38,6 +41,7 @@ const NameInfomationComponents = ({
         value={firstName}
         setValue={setFirstName}
         alert={true}
+
       />
       <TextField
         id="middlename"

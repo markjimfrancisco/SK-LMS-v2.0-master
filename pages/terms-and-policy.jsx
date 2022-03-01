@@ -9,7 +9,7 @@ export default function TermsAndPolicy (props) {
     const [status, setStatus] = useState('school-registration');
     const user = useSelector(state => state.UserReducer);
     const router = useRouter();
-  
+
     return (
       <>
         <FormWrapper defaultForm="term-and-policy" />

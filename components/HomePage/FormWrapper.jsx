@@ -1,11 +1,14 @@
+import { Provider } from "next-auth/client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import AccountVerificationForm from "./AccountVerificationForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import LoginForm from "./LoginForm";
 
+
 import SignupForm from "./SignupForm";
 import TermsAndPolicyComponents from "./TermsAndPolicyComponents";
+
 
 const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
   const user = useSelector((state) => state.UserReducer);
@@ -58,11 +61,12 @@ const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
               <div className="flex items-center">
                 <div className="w-full flex items-center flex-col">
                   <div className="lg:w-96 md:w-80 flex items-center">
+                    <a className="lg:w-96 md:w-80 flex items-center" href="/#home">
                     <img className="w-16 " src="/images/logo.png" />
                     <p className="text-gray-500 text-3xl">
                       Stock{" "}
                       <span className="text-blue-500 font-bold">Knowledge</span>
-                    </p>
+                    </p></a>
                   </div>
                   {!user.isLogin && form === "signup" && (
                     <SignupForm setForm={setForm} />

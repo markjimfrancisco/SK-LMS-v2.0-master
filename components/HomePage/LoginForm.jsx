@@ -7,9 +7,10 @@ import PasswordInput from "../PasswordInput";
 import TextField from "../TextField";
 
 import { DoLogin } from "../../redux/actions/UserAction";
-import { signIn, signOut } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const LoginForm = ({ providers, session, showModal, setForm }) => {
+
   const dispatch = useDispatch();
   const user = useSelector((state) => state.UserReducer);
 
@@ -63,14 +64,14 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
         )} */}
         {providers &&
           Object.values(providers).map((provider) => {
-            if (provider.name === "Facebook")
+            if (provider.name === "Facebook") {
               return (
                 <button
                   key={provider.name}
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className="w-44 flex items-center justify-center border text-xl text-subheading p-4 rounded-full"
+                  className="w-44 flex items-center justify-center border text-xl text-subheading p-1 rounded-full"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -80,114 +81,130 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
                   </svg>
                   Facebook
                 </button>
+
+                
               );
-          })}
-        {/* <button className="w-44 flex items-center text-center justify-center border text-xl text-subheading p-4 rounded-full">
-          <svg
-            className="w-8 h-8"
-            viewBox="0 0 24 24"
-            id="_24x24_On_Light_Google"
-            data-name="24x24/On Light/Google"
-          >
-            <defs>
-              <clipPath id="clip-path">
-                <path
-                  id="a"
-                  d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
-                  fill="none"
-                />
-              </clipPath>
-            </defs>
-            <rect id="view-box" width="24" height="24" fill="none" />
-            <g id="Logo" transform="translate(3 3)">
-              <g id="Clipped">
-                <path
-                  id="a-5"
-                  data-name="a"
-                  d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
-                  fill="none"
-                />
-                <g
-                  id="Clipped-2"
-                  data-name="Clipped"
-                  clipPath="url(#clip-path)"
-                >
-                  <path
-                    id="Path"
-                    d="M0,10.636V0L7.116,5.318Z"
-                    transform="translate(-0.837 3.682)"
-                    fill="#fbbc05"
-                  />
-                </g>
-              </g>
-              <g id="Clipped-3" data-name="Clipped">
-                <path
-                  id="a-6"
-                  data-name="a"
-                  d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
-                  fill="none"
-                />
-                <g
-                  id="Clipped-4"
-                  data-name="Clipped"
-                  clipPath="url(#clip-path)"
-                >
-                  <path
-                    id="Path-2"
-                    data-name="Path"
-                    d="M0,4.5,7.116,9.818l2.93-2.5,10.047-1.6V0H0Z"
-                    transform="translate(-0.837 -0.818)"
-                    fill="#ea4335"
-                  />
-                </g>
-              </g>
-              <g id="Clipped-5" data-name="Clipped">
-                <path
-                  id="a-7"
-                  data-name="a"
-                  d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
-                  fill="none"
-                />
-                <g
-                  id="Clipped-6"
-                  data-name="Clipped"
-                  clipPath="url(#clip-path)"
-                >
-                  <path
-                    id="Path-3"
-                    data-name="Path"
-                    d="M0,15.136,12.558,5.727l3.307.409L20.093,0V19.636H0Z"
-                    transform="translate(-0.837 -0.818)"
-                    fill="#34a853"
-                  />
-                </g>
-              </g>
-              <g id="Clipped-7" data-name="Clipped">
-                <path
-                  id="a-8"
-                  data-name="a"
-                  d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
-                  fill="none"
-                />
-                <g
-                  id="Clipped-8"
-                  data-name="Clipped"
-                  clipPath="url(#clip-path)"
-                >
-                  <path
-                    id="Path-4"
-                    data-name="Path"
-                    d="M14.651,15.136,1.674,5.318,0,4.091,14.651,0Z"
-                    transform="translate(4.605 3.682)"
-                    fill="#4285f4"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
-          Google
-        </button> */}
+            }
+            if (provider.name === "Google") {
+            return (
+              <button
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className="w-44 flex items-center text-center justify-center border text-xl text-subheading p-1 rounded-full">
+                  <svg
+                    className="w-8 h-8"
+                    viewBox="0 0 24 24"
+                    id="_24x24_On_Light_Google"
+                    data-name="24x24/On Light/Google"
+                  >
+                    <defs>
+                      <clipPath id="clip-path">
+                        <path
+                          id="a"
+                          d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
+                          fill="none"
+                        />
+                      </clipPath>
+                    </defs>
+                    <rect id="view-box" width="24" height="24" fill="none" />
+                    <g id="Logo" transform="translate(3 3)">
+                      <g id="Clipped">
+                        <path
+                          id="a-5"
+                          data-name="a"
+                          d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
+                          fill="none"
+                        />
+                        <g
+                          id="Clipped-2"
+                          data-name="Clipped"
+                          clipPath="url(#clip-path)"
+                        >
+                          <path
+                            id="Path"
+                            d="M0,10.636V0L7.116,5.318Z"
+                            transform="translate(-0.837 3.682)"
+                            fill="#fbbc05"
+                          />
+                        </g>
+                      </g>
+                      <g id="Clipped-3" data-name="Clipped">
+                        <path
+                          id="a-6"
+                          data-name="a"
+                          d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
+                          fill="none"
+                        />
+                        <g
+                          id="Clipped-4"
+                          data-name="Clipped"
+                          clipPath="url(#clip-path)"
+                        >
+                          <path
+                            id="Path-2"
+                            data-name="Path"
+                            d="M0,4.5,7.116,9.818l2.93-2.5,10.047-1.6V0H0Z"
+                            transform="translate(-0.837 -0.818)"
+                            fill="#ea4335"
+                          />
+                        </g>
+                      </g>
+                      <g id="Clipped-5" data-name="Clipped">
+                        <path
+                          id="a-7"
+                          data-name="a"
+                          d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
+                          fill="none"
+                        />
+                        <g
+                          id="Clipped-6"
+                          data-name="Clipped"
+                          clipPath="url(#clip-path)"
+                        >
+                          <path
+                            id="Path-3"
+                            data-name="Path"
+                            d="M0,15.136,12.558,5.727l3.307.409L20.093,0V19.636H0Z"
+                            transform="translate(-0.837 -0.818)"
+                            fill="#34a853"
+                          />
+                        </g>
+                      </g>
+                      <g id="Clipped-7" data-name="Clipped">
+                        <path
+                          id="a-8"
+                          data-name="a"
+                          d="M17.791,7.364H9.209v3.477h4.94c-.46,2.209-2.386,3.477-4.94,3.477A5.37,5.37,0,0,1,3.767,9,5.442,5.442,0,0,1,12.6,4.868L15.279,2.25A9.29,9.29,0,0,0,9.209,0,9.08,9.08,0,0,0,0,9a9.08,9.08,0,0,0,9.209,9A8.586,8.586,0,0,0,18,9,7.306,7.306,0,0,0,17.791,7.364Z"
+                          fill="none"
+                        />
+                        <g
+                          id="Clipped-8"
+                          data-name="Clipped"
+                          clipPath="url(#clip-path)"
+                        >
+                          <path
+                            id="Path-4"
+                            data-name="Path"
+                            d="M14.651,15.136,1.674,5.318,0,4.091,14.651,0Z"
+                            transform="translate(4.605 3.682)"
+                            fill="#4285f4"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  Google
+                </button>
+            )
+                }
+         })}
+
+            
+                  
       </div>
+
       <p className="mt-5 text-xl text-subheading">or</p>
       <TextField
         classNames="w-full mt-5 rounded-xl border border-lightGray placeholder-lightGray"

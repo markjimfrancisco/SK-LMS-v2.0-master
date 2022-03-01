@@ -1,7 +1,8 @@
 const TermsOfUseArticle = (props) => {
   return (
     <p className="text-lightGray hover:text-heading">
-      Terms of Use
+      TERMS OF USE
+      <br />
       <br />
       Welcome to Stock Knowledge!
       <br />

@@ -416,7 +416,7 @@ export default function Home(props) {
               />
             </div>
           </div>
-          <div className="lg:w-1/2 md:w-full reno:w-full xs:w-full xxs:w-full md:space-y-5 reno:space-y-5 sm:space-y-5 xs:space-y-5 xxs:space-y-5 self-start 1080:px-20">
+          <div className="lg:w-1/3 md:w-full reno:w-full xs:w-full xxs:w-full md:space-y-5 reno:space-y-5 sm:space-y-5 xs:space-y-5 xxs:space-y-5 self-start 1080:px-20">
             <div className="flex items-center text-blue-500">
               <svg
                 className="lg:h-4 lg:w-4 md:h-6 md:w-6 reno:h-6 sm:h-6 xs:h-6 xxs:w-6"

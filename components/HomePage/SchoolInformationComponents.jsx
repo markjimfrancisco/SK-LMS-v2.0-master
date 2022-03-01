@@ -12,9 +12,7 @@ const SchoolInformationComponents = ({
   setGradeLevel,
   setStep,
 }) => {
-  const [schoolsLoading, schools] = useHttp("/schools", [
-    "Jose Abad Santos"
-  ]);
+  const [schoolsLoading, schools] = useHttp("/schools", []);
   const [gradelevelsLoading, gradeLevels] = useHttp(`/grade-levels?`, []);
 
   const [disable, setDisable] = useState(true);

@@ -9,6 +9,8 @@ import { useUserManagementHook } from "../../hooks/userManagementHook";
 import { useRouter } from "next/dist/client/router";
 import LMSMobileLayout from "../../layouts/LMSMobileLayout";
 import FormWrapper from "../../components/HomePage/FormWrapper";
+import { providers, session } from "next-auth/client";
+import LoginForm from "../../components/HomePage/LoginForm";
 
 export default function Index(props) {
   useUserManagementHook();
@@ -93,7 +95,7 @@ export default function Index(props) {
         )} */}
         {isMobile() && user.isLogin && <LMSMobileLayout />}
         {!isMobile() && user.isLogin && <MainLayout />}
-        {!user.isLogin && <FormWrapper defaultForm={'login'}/>}
+        {!user.isLogin && <FormWrapper defaultForm={"login"}/>}
       </>
     </SocketContext.Provider>
   );
