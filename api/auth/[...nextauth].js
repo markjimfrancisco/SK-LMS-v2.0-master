@@ -14,26 +14,26 @@ const options = {
     ],
 
     //Token
-    // session: {
-    //     jwt: true,
-    //    },
+    session: {
+        jwt: true,
+       },
 
-    // secret: process.env.secret,
+    secret: process.env.secret,
 
-    // callbacks: {
-    //     async jwt (token, account) {
-    //         if(account?.accessToken) {
-    //             token.accessToken = account.accessToken;
-    //         }
-    //         return token;
-    //     },
-    //     redirect: async(url, baseUrl) => {
-    //         if (url === '/profile') {
-    //             return Promise.resolve('/');
-    //         }
-    //         return Promise.resolve('/');
-    //     }
-    // },
+    callbacks: {
+        async jwt (token, account) {
+            if(account?.accessToken) {
+                token.accessToken = account.accessToken;
+            }
+            return token;
+        },
+        redirect: async(url, baseUrl) => {
+            if (url === '/profile') {
+                return Promise.resolve('/');
+            }
+            return Promise.resolve('/');
+        }
+    },
 
     pages: {
         signIn: '/',

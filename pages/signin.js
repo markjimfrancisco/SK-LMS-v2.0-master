@@ -22,7 +22,7 @@ const Login = ({providers, session}) => {
 
         <p className="text-center">Login with NextAuth</p>
 
-        <button>{providers.facebook.name}</button>
+        <button>{providers.name}</button>
         
       </div>
     </div>
