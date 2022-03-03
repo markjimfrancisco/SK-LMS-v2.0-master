@@ -37,7 +37,6 @@ const options = {
 
     pages: {
         signIn: '/',
-        error: '/'
     }
 }
 

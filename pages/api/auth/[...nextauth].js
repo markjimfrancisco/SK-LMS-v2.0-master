@@ -14,9 +14,9 @@ const options = {
     ],
 
     //Token
-    session: {
-     jwt: true,
-    },
+    // session: {
+    //  jwt: true,
+    // },
 
     // secret: process.env.SECRET,
 
@@ -41,11 +41,11 @@ const options = {
         // }
     //},
 
-    pages: {
-        signIn: '/',
-        signOut: '/',
-        error: '/'
-    }
+    // pages: {
+    //     signIn: '/',
+    //     signOut: '/',
+    //     error: '/'
+    // }
 
 }
 
