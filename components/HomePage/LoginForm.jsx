@@ -82,8 +82,6 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
                   </svg>
                   Facebook
                 </button>
-
-                
               );
 
             if (provider.name === "Google")

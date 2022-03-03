@@ -43,6 +43,7 @@ const options = {
 
     pages: {
         signIn: '/',
+        signOut: '/',
         error: '/'
     }
 
