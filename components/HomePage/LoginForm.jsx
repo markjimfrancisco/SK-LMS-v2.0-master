@@ -26,6 +26,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
     toLogin ? { username, password } : null,
     toLogin ? "/login" : null
   );
+  
 
   // const [loading, authLoggedInData] = usePostHttp(session ? {session} : null, session ? '/login')
 
@@ -256,5 +257,15 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
     </>
   );
 };
+
+export async function getServerSideProps (context) {
+  return {
+    props: {
+      providers: await providers(context),
+      session: await getSession(context),
+      //csrfToken: await csrfToken(context)
+    }
+  }
+}
 
 export default LoginForm;

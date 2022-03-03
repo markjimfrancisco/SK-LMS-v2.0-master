@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import AccountVerificationForm from "./AccountVerificationForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import LoginForm from "./LoginForm";
+import ModalLayout from "./ModalLayout";
 
 
 import SignupForm from "./SignupForm";
@@ -75,12 +76,12 @@ const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
                     !user.data.username &&
                     !user.data.verified && <SignupForm setForm={setForm} />}
                   {!user.isLogin && form === "login" && (
-                    <LoginForm
-                      providers={providers}
-                      session={session}
-                      showModal={showModal}
-                      setForm={setForm}
-                    />
+                     <LoginForm
+                       providers={providers}
+                       session={session}
+                       showModal={showModal}
+                       setForm={setForm}
+                     />
                   )}
                   {!user.isLogin && form === "forgot-password" && (
                     <ForgotPasswordForm

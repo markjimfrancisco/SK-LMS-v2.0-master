@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { redirect } from "next/dist/next-server/server/api-utils";
 
 const options = {
     providers: [
@@ -15,28 +14,30 @@ const options = {
     ],
 
     //Token
-    jwt: {
-        encryption: true,
-    },
-    secret: process.env.secret,
+    session: {
+        jwt: true,
+       },
 
-    callbacks: {
-        async jwt (token, account) {
-            if(account?.accessToken) {
-                token.accessToken = account.accessToken;
-            }
-            return token;
-        },
-        redirect: async(url, baseUrl) => {
-            if (url === '/profile') {
-                return Promise.resolve('/');
-            }
-            return Promise.resolve('/');
-        }
-    },
+    // secret: process.env.secret,
+
+    // callbacks: {
+    //     async jwt (token, account) {
+    //         if(account?.accessToken) {
+    //             token.accessToken = account.accessToken;
+    //         }
+    //         return token;
+    //     },
+    //     redirect: async(url, baseUrl) => {
+    //         if (url === '/profile') {
+    //             return Promise.resolve('/');
+    //         }
+    //         return Promise.resolve('/');
+    //     }
+    // },
 
     pages: {
-        signIn: '/'
+        signIn: '/login',
+        error: '/login'
     }
 }
 

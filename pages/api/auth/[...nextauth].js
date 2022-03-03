@@ -14,28 +14,36 @@ const options = {
     ],
 
     //Token
-    jwt: {
-        encryption: true,
+    session: {
+     jwt: true,
     },
-    secret: process.env.secret,
 
-    callbacks: {
-        async jwt (token, account) {
-            if(account?.accessToken) {
-                token.accessToken = account.accessToken;
-            }
-            return token;
-        },
-        redirect: async(url, baseUrl) => {
-            if (url === '/profile') {
-                return Promise.resolve('/');
-            }
-            return Promise.resolve('/');
-        }
-    },
+    // secret: process.env.SECRET,
+
+    // callbacks: {
+    //     async jwt (token, account) {
+    //         if(account?.accessToken) {
+    //             token.accessToken = account.accessToken;
+    //         }
+    //         return token;
+    //     },
+
+    //     async session(session, user, token) {
+    //         session.accessToken = token.accessToken
+    //         return session;
+    //     },
+
+        // redirect: async(url, baseUrl) => {
+        //     if (url === '/profile') {
+        //         return Promise.resolve('/');
+        //     }
+        //     return Promise.resolve('/');
+        // }
+    //},
 
     pages: {
-        signIn: '/'
+        signIn: '/login',
+        error: '/login'
     }
 
 }

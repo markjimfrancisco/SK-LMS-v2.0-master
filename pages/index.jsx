@@ -24,7 +24,7 @@ export default function Home(props) {
 
   const dispatch = useDispatch();
 
-  const [session, loading] = useSession();
+  const [session] = useSession();
 
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const user = useSelector((state) => state.UserReducer);
@@ -485,5 +485,7 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-  return { props: { providers: await providers(context) } };
+  return { 
+    props: { 
+      providers: await providers(context) } };
 }

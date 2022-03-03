@@ -10,7 +10,7 @@ export default function MiniProfile(){
                     <img src="/images/avatar.png" />
                 </div>
                 <div id="mini-name">
-                    <p>Welcome {user.data.firstname.charAt(0).toUpperCase() + user.data.firstname.slice(1)}!</p> 
+                    <p>Welcome {user.data.firstname.charAt(0).toUpperCase() + user.data.firstname.slice(1)}!</p>
                     <div id="mini-name-name"></div>
                     <div id="mini-name-stars" className="flex">
                         <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
