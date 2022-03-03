@@ -7,10 +7,9 @@ import PasswordInput from "../PasswordInput";
 import TextField from "../TextField";
 
 import { DoLogin } from "../../redux/actions/UserAction";
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signOut } from "next-auth/client";
 
 const LoginForm = ({ providers, session, showModal, setForm }) => {
-
   const dispatch = useDispatch();
   const user = useSelector((state) => state.UserReducer);
 
@@ -26,8 +25,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
     toLogin ? { username, password } : null,
     toLogin ? "/login" : null
   );
-  
-
+    
   // const [loading, authLoggedInData] = usePostHttp(session ? {session} : null, session ? '/login')
 
   useEffect(() => {

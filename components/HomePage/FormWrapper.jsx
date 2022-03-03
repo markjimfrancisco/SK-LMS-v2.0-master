@@ -1,15 +1,11 @@
-import { Provider } from "next-auth/client";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import AccountVerificationForm from "./AccountVerificationForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import LoginForm from "./LoginForm";
-import ModalLayout from "./ModalLayout";
-
 
 import SignupForm from "./SignupForm";
 import TermsAndPolicyComponents from "./TermsAndPolicyComponents";
-
 
 const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
   const user = useSelector((state) => state.UserReducer);

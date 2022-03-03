@@ -41,11 +41,11 @@ const options = {
         // }
     //},
 
-    // pages: {
-    //     signIn: '/',
+    pages: {
+        signIn: '/signin',
     //     signOut: '/',
     //     error: '/'
-    // }
+    }
 
 }
 
