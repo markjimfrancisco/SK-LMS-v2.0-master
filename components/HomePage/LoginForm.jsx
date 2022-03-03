@@ -65,7 +65,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
         )} */}
         {providers &&
           Object.values(providers).map((provider) => {
-            if (provider.name === "Facebook") {
+            if (provider.name === "Facebook")
               return (
                 <button
                   key={provider.name}
@@ -85,8 +85,8 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
 
                 
               );
-            }
-            if (provider.name === "Google") {
+
+            if (provider.name === "Google")
             return (
               <button
                   key={provider.name}
@@ -199,11 +199,8 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
                   Google
                 </button>
             )
-                }
          })}
-
-            
-                  
+         
       </div>
 
       <p className="mt-5 text-xl text-subheading">or</p>
