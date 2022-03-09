@@ -1,4 +1,4 @@
-impor { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/dist/client/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePostHttp } from "../../hooks/postHttp";
