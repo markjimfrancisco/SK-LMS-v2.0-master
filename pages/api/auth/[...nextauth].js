@@ -12,41 +12,6 @@ const options = {
             clientSecret: process.env.GOOGLE_SECRET,
         })
     ],
-
-    //Token
-    session: {
-     jwt: true,
-    },
-
-    secret: process.env.SECRET,
-
-    callbacks: {
-        async jwt (token, account) {
-            if(account?.accessToken) {
-                token.accessToken = account.accessToken;
-            }
-            return token;
-        },
-
-        async session(session, user, token) {
-            session.accessToken = token.accessToken
-            return session;
-        },
-
-        redirect: async(url, baseUrl) => {
-            if (url === '/profile') {
-                return Promise.resolve('/');
-            }
-            return Promise.resolve('/');
-        }
-    },
-
-    pages: {
-        signIn: '/signin',
-    //     signOut: '/',
-    //     error: '/'
-    }
-
 }
 
 export default (req, res) => NextAuth(req, res, options);
