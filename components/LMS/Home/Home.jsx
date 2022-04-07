@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
   faBookmark,
   faChartPie,
@@ -6,6 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Home = () => {
+  const user = useSelector((state) => state.UserReducer);
   const pieChartIcon = (
     <FontAwesomeIcon
       icon={faChartPie}
@@ -38,7 +40,7 @@ const Home = () => {
       <div className="w-full h-72 border relative">
         <img className="w-full h-full" src="/images/dashboard-content-1.svg" />
         <p className="absolute top-8 left-8 text-skBlue font-bold text-5xl">
-          Hi Firstname,
+          Hi {user.data && `${user.data.firstname}`},
         </p>
         <p className="absolute bottom-16 left-8 text-white text-2xl">
           Welcome Back! What will you learn today?
