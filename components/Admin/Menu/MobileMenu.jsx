@@ -74,6 +74,16 @@ const MobileMenu = () => {
     />
   );
 
+  //Addtion
+  const messageIcon = (
+    <FontAwesomeIcon
+      icon={faMessages}
+      size="lg"
+      color="lightGray"
+      className={`text-skBlue cursor-pointer hover:text-subheading`}
+    />
+  );
+
   const logoutIcon = (
     <FontAwesomeIcon
       icon={faSignOutAlt}
@@ -136,8 +146,14 @@ const MobileMenu = () => {
         </div>
         <div className="box-border h-auto p-4 flex justify-start items-center space-x-2 border-b">
           {leaderboardIcon}
-          <h4>Home</h4>
+          <h4>Leaderboard</h4>
         </div>
+
+        <div className="box-border h-auto p-4 flex justify-start items-center space-x-2 border-b">
+          {messageIcon}
+          <h4>Forum</h4>
+        </div>
+
         <div
           onClick={() => {
             Logout();
