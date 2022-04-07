@@ -89,7 +89,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
             return (
               <button
                   key={provider.name}
-                  onClick={() => {
+                  onClick= {() => {
                     signIn(provider.id);
                   }}
                   className="w-44 flex items-center text-center justify-center border text-xl text-subheading p-2 rounded-full">
