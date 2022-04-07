@@ -1,3 +1,4 @@
+import { signIn } from "next-auth/client";
 import FormWrapper from "./FormWrapper";
 
 const ModalLayout = ({providers, signup, code, forgotpassword, showModal}) => {
