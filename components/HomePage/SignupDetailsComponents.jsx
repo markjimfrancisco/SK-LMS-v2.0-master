@@ -210,17 +210,11 @@ const SignupDetailsComponents = ({
           className="text-lightGray xs:text-sm xxs:text-sm hover:text-subheading"
         >
           I agree to the&nbsp;
-          <Link href="/terms-and-policy?terms=true">
+          <a href="/terms-and-policy?terms=true" target="_blank">
             <a className="text-skBlueInactive hover:text-skBlue">
-              Terms of Service
+              Terms of Service & Privacy Policy
             </a>
-          </Link>
-          &nbsp;and&nbsp;
-          <Link href="/terms-and-policy?policy=true">
-            <a className="text-skBlueInactive hover:text-skBlue">
-              Privacy Policy
-            </a>
-          </Link>
+          </a>
         </label>
       </div>
       <button
