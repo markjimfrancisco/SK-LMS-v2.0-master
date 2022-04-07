@@ -56,7 +56,7 @@ const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
             )}
             <div className="w-full h-full flex justify-center align-center">
               <div className="flex items-center">
-                <div className="w-full flex items-center flex-col">
+                <div className="w-full flex items-center flex-col overflow-y-auto overflow-x-hidden scrollbar h-5/6">
                   <div className="lg:w-96 md:w-80 flex items-center">
                     <a className="lg:w-96 md:w-80 flex items-center" href="/#home">
                     <img className="w-16 " src="/images/logo.png" />

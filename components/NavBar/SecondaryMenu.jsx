@@ -24,6 +24,9 @@ const SecondaryMenu = () => {
 
   const gearIcon = (
     <FontAwesomeIcon
+      onClick={() => {
+        router.push('/lms/settings', undefined, {shallow:true, scroll: false})
+      }}
       icon={faCog}
       size="lg"
       className={`text-skBlue cursor-pointer`}

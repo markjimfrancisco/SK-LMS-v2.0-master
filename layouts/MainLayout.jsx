@@ -3,6 +3,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import CalendarLayout from "../components/Calendar/CalendarLayout";
 import Menu from "../components/LMS/Menu/Menu";
 import Home from "../components/LMS/Home/Home";
+import Forum from "../components/LMS/Forum/Forum";
 import SecondaryMenu from "../components/NavBar/SecondaryMenu";
 import Search from "../components/NavBar/Search/Search";
 import BrandLogo from "../components/NavBar/BrandLogo/BrandLogo";
@@ -59,9 +60,13 @@ export default function MainLayout(props) {
                     <Menu />
                   </div>
                   {!slug && <Home />}
-                  {slug && slug[0] != "courses" && <Home />}
+                  {slug && slug[0] != "courses" && slug && slug[0] != "forum" && <Home />}
+                  
                   {/* COURSES HOME */}
                   {slug && slug[0] == "courses" && !slug[1] && <Courses />}
+
+                  {/* FORUM HOME */}
+                  {slug && slug[0] == "forum" && !slug[1] && <Forum />}
 
                   {/* COURSES - SUBJECT - LESSON OVERVIEW */}
                   {slug && slug[0] == "courses" && slug[1] && !slug[2] && (
@@ -72,6 +77,7 @@ export default function MainLayout(props) {
                   {slug && slug[0] == "courses" && slug[1] && slug[2] && (
                     <CourseTopic />
                   )}
+
                   {!slug && (
                     <div className="box-border flex flex-col overflow-hidden sticky w-1/4 min-h-content top-navbar-height space-y-4 py-10">
                       <CalendarLayout />

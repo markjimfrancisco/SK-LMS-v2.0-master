@@ -16,9 +16,9 @@ const Footer = (props) => {
           </h4>
         </a>
         <div className="lg:w-3/4 md:w-3/4 reno:w-3/4 sm:w-full xs:w-full xxs:w-full flex items-center lg:justify-end md:justify-end reno:justify-end sm:justify-center xs:justify-center xxs:justify-center text-md text-white space-x-5">
-          <Link className="text-sm" href="/terms-and-policy">
+          <a className="text-sm" href="/terms-and-policy" target="_blank" >
             Privacy Policy & Terms
-          </Link>
+          </a>
           {/*<Link href="/terms-and-policy?terms=true">
             Terms
           </Link>*/}
