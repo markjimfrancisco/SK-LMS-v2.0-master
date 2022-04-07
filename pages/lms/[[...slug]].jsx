@@ -96,7 +96,7 @@ export default function Index(props) {
         )} */}
         {isMobile() && user.isLogin && <LMSMobileLayout />}
         {!isMobile() && user.isLogin && <MainLayout />}
-        {!user.isLogin && <FormWrapper defaultForm={"login"} />}
+        {!user.isLogin && <FormWrapper providers={props.providers} defaultForm={"login"} />}
       </>
     </SocketContext.Provider>
   );
