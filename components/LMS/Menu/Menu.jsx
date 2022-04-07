@@ -1,5 +1,5 @@
-import { faBookmark, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-import { faHome, faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark, faCalendarAlt, } from "@fortawesome/free-regular-svg-icons";
+import { faHome, faTrophy, faBlog} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
@@ -21,7 +21,8 @@ const Menu = (props) => {
           slug[0] != user.data.username &&
           slug &&
           slug[0] != "my-schedule" &&
-          slug[0] != "courses")
+          slug[0] != "courses" &&
+          slug[0] != "forum")
           ? "text-skBlue"
           : "text-lightGray hover:text-skBlue"
       } cursor-pointer `}
@@ -58,6 +59,20 @@ const Menu = (props) => {
       className={`cursor-pointer hover:text-subheading`}
     />
   );
+
+  const messageIcon = (
+    <FontAwesomeIcon
+      icon={faBlog}
+      size="lg"
+      color="lightGray"
+      className={`${
+        slug && slug[0] == "forum"
+          ? "text-skBlue"
+          : "text-lightGray hover:text-skBlue"
+      } cursor-pointer`}
+    />
+  );
+
   return (
     <>
       <div
@@ -70,7 +85,8 @@ const Menu = (props) => {
             slug[0] != user.data.username &&
             slug &&
             slug[0] != "my-schedule" &&
-            slug[0] != "courses")
+            slug[0] != "courses" &&
+            slug[0] != "forum")
             ? "bg-blue-50 rounded-l-full border-skBlue border-r-4 text-skBlue"
             : "text-lightGray"
         }`}
@@ -101,6 +117,22 @@ const Menu = (props) => {
       <div className="flex items-center w-full h-16 pl-10 space-x-4">
         {leaderboardIcon}
         <p className="text-lightGray">Leaderboard</p>
+      </div>
+      <div
+        onClick={() => {
+          router.push("/lms/forum/", undefined, {
+            scroll: false,
+            shallow: true,
+          });
+        }}
+        className={`flex items-center w-full h-16 pl-10 space-x-4 ${
+          slug && slug[0] == "forum"
+            ? "bg-blue-50 rounded-l-full border-skBlue border-r-4 text-skBlue"
+            : "text-lightGray"
+        }`}
+      >
+        {messageIcon}
+        <p>Forum</p>
       </div>
     </>
   );
