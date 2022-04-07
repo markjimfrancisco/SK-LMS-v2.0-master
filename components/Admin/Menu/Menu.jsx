@@ -60,6 +60,16 @@ const Menu = (props) => {
     />
   );
 
+
+  const messageIcon = (
+    <FontAwesomeIcon
+      icon={faMessages}
+      size="lg"
+      color="lightGray"
+      className={`cursor-pointer hover:text-subheading`}
+    />
+  );
+
   const toolsIcon = (
     <FontAwesomeIcon
       icon={faTools}
@@ -118,6 +128,13 @@ const Menu = (props) => {
         {leaderboardIcon}
         <p className="text-lightGray">Leaderboard</p>
       </div>
+
+
+      <div className="flex items-center w-full h-16 pl-10 space-x-4">
+        {messageIcon}
+        <p className="text-lightGray">Forum</p>
+      </div>
+
       <div className="w-full group flex flex-col">
         <div className={`flex items-center w-full h-16 pl-10 space-x-4 ${slug && slug[0] == 'maintenance' ? 'bg-blue-50 border-skBlue border-r-4 text-skBlue' : 'text-lightGray'}`}>
           {toolsIcon}
