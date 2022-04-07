@@ -68,6 +68,7 @@ const Slug = () => {
       </Head>
       {loginModalOpen && (
         <ModalLayout
+          providers={providers}
           signup={signup}
           code={code}
           forgotpassword={forgotpassword}
