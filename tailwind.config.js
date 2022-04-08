@@ -22,17 +22,17 @@ module.exports = {
       skBlueInactive: '#B8DDFF',
       lightGray: '#B5B5B5'
     },
-    fontFamily: {
-      avenir: 'Avenir'
-    },
+    // fontFamily: {
+    //   avenir: 'Avenir'
+    // },
     extend: {
-      container: {
-        center: true,
-        screens: {
-          lg: '1024px',
-          xl: '1280px',
-        },
-      },
+      // container: {
+      //   center: true,
+      //   screens: {
+      //     lg: '1024px',
+      //     xl: '1280px',
+      //   },
+      // },
       width: {
         'height':'100vh'
       },
