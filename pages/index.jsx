@@ -16,6 +16,7 @@ import ModalLayout from "../components/HomePage/ModalLayout";
 import { usePostHttp } from "../hooks/postHttp";
 import { providers, useSession } from "next-auth/client";
 import { DoLogin, UserLogout } from "../redux/actions/UserAction";
+import ContactForm from "../components/ContactForm";
 
 export default function Home(props) {
   const [validTokenLoading, validToken] = usePostHttp(null, '/auth/validate');
@@ -40,6 +41,7 @@ export default function Home(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("Submit");
 
   const [authLoginLoading, authData] = usePostHttp(
     !user.isLogin && session && toLogin
@@ -370,51 +372,7 @@ export default function Home(props) {
         </h4>
         <div className="flex w-full lg:flex-row md:flex-col reno:flex-col sm:flex-col xs:flex-col xxs:flex-col lg:space-y-0 md:space-y-10 reno:space-y-10 sm:space-y-10 xs:space-y-10 xxs:space-y-10 xs:items-center xxs:items-center md:justify-around my-16 px-10">
           <div className="lg:w-2/5 md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full self-start 1080:px-20">
-            <div className="space-y-4">
-              <div>
-                <label className="text-lg font-bold text-subheading">
-                  Name:
-                </label>
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full text-subheading"
-                  type="text"
-                  placeholder="Ex. Juan Dela Cruz"
-                />
-              </div>
-              <div>
-                <label className="text-lg font-bold text-subheading">
-                  Email:
-                </label>
-                <input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border-subheading"
-                  type="text"
-                  placeholder="something@website.com"
-                />
-              </div>
-              <div>
-                <label className="text-lg font-bold text-subheading">
-                  Message:
-                </label>
-                <br />
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full text-subheading"
-                ></textarea>
-              </div>
-              <input
-                onClick={() => {
-                  setToSubmit(true);
-                }}
-                className="w-full h-10 bg-blue-500 rounded-full text-white uppercase"
-                type="submit"
-                value={toSubmit ? "Sending your request..." : "Send a message"}
-              />
-            </div>
+            <ContactForm />
           </div>
           <div className="lg:w-2/5 md:w-full reno:w-full xs:w-full xxs:w-full md:space-y-5 reno:space-y-5 sm:space-y-5 xs:space-y-5 xxs:space-y-5 self-start 1080:px-20">
             <div className="flex items-center text-blue-500">
