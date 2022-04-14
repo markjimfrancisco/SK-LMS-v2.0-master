@@ -134,8 +134,9 @@ export default function Home(props) {
               Empowering <br />
               teachers and<br />
               learners in the<br />
-              21st Century
+              21st Century.
             </h1>
+            <br />
             <br />
             <h2 className="xl:text-4xl lg:text-2xl md:text-lg text-subheading md:leading-snug">
               Stock Knowledge brings innovation and education together to
@@ -160,6 +161,9 @@ export default function Home(props) {
         </div>
       </div>
       {/* <NavBar showModal={setLoginModalOpen} loginModalOpen={loginModalOpen} page={"home"}/> */}
+      <br />
+      <br />
+      <br />
       <br />
       <div className="lg:w-full reno:w-full md:w-full sm:w-screen xs:w-screen xxs:w-screen p-6 h-1/4">
         <h1
