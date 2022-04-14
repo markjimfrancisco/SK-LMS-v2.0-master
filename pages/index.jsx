@@ -140,7 +140,7 @@ export default function Home(props) {
             <br />
             <h2 className="xl:text-4xl lg:text-2xl md:text-lg text-subheading md:leading-snug">
               Stock Knowledge brings innovation and education together to
-              provide accessible experiential learning technology that students
+              provide affordable and accessible experiential learning technology that students
               love.
             </h2>
             <br />
