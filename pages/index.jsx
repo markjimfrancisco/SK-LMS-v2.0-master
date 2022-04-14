@@ -131,8 +131,10 @@ export default function Home(props) {
         <div className="flex lg:flex-row reno:flex-row md:flex-row sm:flex-col xs:flex-col xxs:flex-col reno:w-full md:w-full sm:w-screen xs:w-screen xxs:w-screen h-1/2 lg:mt-20 xs:mt-0 xxs:mt-0">
           <div className="lg:w-1/2 md:w-1/2 reno:w-1/2 sm:w-screen xs:w-screen xxs:w-screen lg:pl-10 lg:pt-10 md:pl-10 md:pt-10 reno:pl-10 reno:pt-10 sm:pl-10 xs:pl-10 sm:pt-10 xs:pt-10 xxs:pt-10">
             <h1 className="lg:text-8xl font-bold text-heading md:text-6xl reno:text-6xl sm:text-5xl xs:text-5xl xxs:text-5xl">
-              Learn to Play. <br />
-              Play to Learn.
+              Empowering <br />
+              teachers and<br />
+              learners in the<br />
+              21st Century
             </h1>
             <br />
             <h2 className="xl:text-4xl lg:text-2xl md:text-lg text-subheading md:leading-snug">
