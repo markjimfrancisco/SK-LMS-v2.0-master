@@ -1,90 +1,74 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePostHttp } from "../hooks/postHttp";
 
 const ContactForm = () => {
+    const [toSubmit, setToSubmit] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-    const [status, setStatus] = useState("Send a message");
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus("Sending your request...");
-        const { name, email, subject, message } = e.target.elements;
-        let details = {
-            name: name.value,
-            email: email.value,
-            subject: subject.value,
-            message: message.value,
-        };
+    const [requestLoading, requestData] = usePostHttp(
+        toSubmit ? { name: name, email: email, message: message } : null,
+        toSubmit ? "/request/demo" : null
+    );
 
-        let response = await fetch("http://localhost:3001/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(details),
-        });
-        setStatus("Send a message");
-        let result = await response.json();
-        alert(result.status);
-        if (result.status == "Message Sent") {
-            name.value="";
-            email.value="";
-            subject.value="";
-            message.value="";
-        } else {
-            alert ("Something went wrong!")
+    useEffect(() => {
+        if (requestData) {
+          setToSubmit(false);
+          setName("");
+          setEmail("");
+          setMessage("");
+          alert("Our representative will contact you soon. Thank you.");
         }
-    };
-
+      }, [requestData]);
+    
     return (
-        <form onSubmit={handleSubmit} >
-            <div className="space-y-4">
-                <div>
-                    <label className="text-lg font-bold text-subheading" htmlFor="name">
-                    Name:
-                    </label>
-                    <input
-                    className="w-full text-subheading"
-                    type="text"
-                    placeholder="Ex. Juan Dela Cruz"
-                    id="name"
-                    />
-                </div>
-            <div>
-                <label className="text-lg font-bold text-subheading" htmlFor="email">
-                Email:
+        <div className="space-y-4">
+              <div>
+                <label className="text-lg font-bold text-subheading">
+                  Name:
                 </label>
                 <input
-                    className="w-full border-subheading"
-                    type="email"
-                    id="email"
-                    placeholder="something@website.com"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full text-subheading"
+                  type="text"
+                  placeholder="Ex. Juan Dela Cruz"
                 />
-            </div>
-            <div>
-                <label className="text-lg font-bold text-subheading" htmlFor="subject">
-                Subject:
+              </div>
+              <div>
+                <label className="text-lg font-bold text-subheading">
+                  Email:
                 </label>
                 <input
-                    className="w-full border-subheading"
-                    type="text"
-                    id="subject"
-                    placeholder="Ex. Inquiry or Setup a Meeting"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full border-subheading"
+                  type="text"
+                  placeholder="something@website.com"
                 />
-            </div>
-            <div>
-                <label className="text-lg font-bold text-subheading" htmlFor="message">
-                Message:
+              </div>
+              <div>
+                <label className="text-lg font-bold text-subheading">
+                  Message:
                 </label>
                 <br />
                 <textarea
-                    className="w-full text-subheading" id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full text-subheading"
                 ></textarea>
-            </div>
-            <button className="w-full h-10 bg-blue-500 rounded-full text-white uppercase" type="submit">
-                {status}
-            </button>
-            </div>
-        </form>
-        );
+              </div>
+              <input
+                onClick={() => {
+                  setToSubmit(true);
+                }}
+                className="w-full h-10 bg-blue-500 rounded-full text-white uppercase"
+                type="submit"
+                value={toSubmit ? "Sending your request..." : "Send a message"}
+              />
+        </div>
+    )
 };
 
 export default ContactForm;
