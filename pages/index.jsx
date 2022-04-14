@@ -406,7 +406,7 @@ export default function Home(props) {
                 href="mailto:stock.knowledge7@gmail.com "
                 className="text-skBlue lg:text-sm md:text-sm reno:text-sm sm:text-sm xs:text-sm xxs:text-sm"
               >
-                stock.knowledge7@gmail.com
+                stock.knowledge7@gmail.com, info@stockknowledge.org
               </a>
             </div>
 
