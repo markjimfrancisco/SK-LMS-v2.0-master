@@ -41,7 +41,6 @@ export default function Home(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("Submit");
 
   const [authLoginLoading, authData] = usePostHttp(
     !user.isLogin && session && toLogin
