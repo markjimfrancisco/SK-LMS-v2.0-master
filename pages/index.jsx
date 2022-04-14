@@ -134,7 +134,7 @@ export default function Home(props) {
               Empowering <br />
               teachers and<br />
               learners in the<br />
-              21st Century.
+              21st century.
             </h1>
             <br />
             <br />
