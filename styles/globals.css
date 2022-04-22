@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+@font-face {
   font-family: "Avenir";
   src: url("/AvenirLTStd-Roman.otf");
-} */
+}
 
   .scrollbar::-webkit-scrollbar {
     width: 15px;
@@ -27,10 +27,10 @@
     background: #c0a0b9;
   }
 
-/* html,
+html,
 body {
   @apply font-avenir;
-} */
+}
 
 #dash-menu {
   background: #173245;
