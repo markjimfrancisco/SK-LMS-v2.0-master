@@ -19,10 +19,6 @@ const Footer = (props) => {
           <a className="text-sm" href="/terms-and-policy" target="_blank" >
             Privacy Policy & Terms
           </a>
-          {/*<Link href="/terms-and-policy?terms=true">
-            Terms
-          </Link>*/}
-          
           <div className="flex align-center space-x-4">
             <a href="https://www.facebook.com/StockKnowledgetool">
               <img src="/images/facebook.svg" />

@@ -41,7 +41,6 @@ const NameInfomationComponents = ({
         value={firstName}
         setValue={setFirstName}
         alert={true}
-
       />
       <TextField
         id="middlename"
