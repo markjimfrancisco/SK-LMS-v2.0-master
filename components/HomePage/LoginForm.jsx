@@ -201,7 +201,6 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
          })}
          
       </div>
-
       <p className="mt-5 text-xl text-subheading">or</p>
       <TextField
         classNames="w-full mt-5 rounded-xl border border-lightGray placeholder-lightGray"

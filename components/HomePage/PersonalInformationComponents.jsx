@@ -51,20 +51,17 @@ const PersonalInformationComponent = ({
       setMonthLong(new Date(year, month + 1, 0).getDate() + 1)
   },[year, month])
     
-
   return (
     <>
       <label className="lg:w-full md:w-3/4 sm:w-full xs:w-full xxs:w-full xs:h-8 xxs:h-8 text-left text-lg mt-2 font-semibold text-subheading">
         Date of Birth
       </label>
-
       {/*<NumberField
         id="year"
         classNames="lg:w-full md:w-full sm:w-full xs:w-full xxs:w-full xs:h-8 xxs:h-8 mt-2 rounded-xl border border-lightGray placeholder-lightGray"
         value={year}
         setValue={setYear}
         placeholder="Year"
-        
       />*/}
       <select
         id="year"

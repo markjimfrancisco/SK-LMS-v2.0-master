@@ -28,7 +28,6 @@ export default function NumberField({
     } else setOverInput(true);
   }, [value]);
 
-
   useEffect(() => {
     if (value.length == 0) {
       setOverInput, setIncompleteInput(false);

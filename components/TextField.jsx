@@ -15,7 +15,6 @@ export default function TextField({
   const [invalidInput, setInvalidInput] = useState(false);
   const [incompleteInput, setIncompleteInput] = useState(false);
 
-
   useEffect(() => {
     if (value.match(/^[A-Za-z ]*/)[0] != value) {
       setInvalidInput(true);
@@ -52,7 +51,6 @@ export default function TextField({
           message="Minimum of 2 letters are accepted in this input."
         />
       )} 
-      
     </>
   );
 }
