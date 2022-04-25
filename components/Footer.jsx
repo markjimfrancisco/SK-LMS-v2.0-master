@@ -48,7 +48,7 @@ const Footer = (props) => {
             <a href="/#solution">Our Solutions</a>
           </li>
           <li>
-            <a href="#story">Our Story</a>
+            <a href="/#story">Our Story</a>
           </li>
           <li>
             <a href="/#team">Our Team</a>

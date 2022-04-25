@@ -36,6 +36,7 @@ const PersonalInformationComponent = ({
   const [disable, setDisable] = useState(true);
 
   const [daysLoading, days] = useHttp(`/calendar/days?monthlong=${monthLong}`, [monthLong]);
+  
 
   useEffect(() => {
     if (mobileno.match(/^[0-9]*/) == mobileno && mobileno != "" && gender)
@@ -44,6 +45,10 @@ const PersonalInformationComponent = ({
       setDisable(false);
     if (mobileno.match(/^[0-9]*/) <= 1)
       setDisable(true); 
+    if (gender == 1)
+      setDisable(false);
+    if (gender == 0)
+      setDisable(true);
   }, [gender, mobileno]);
 
   useEffect(() => {
@@ -125,8 +130,8 @@ const PersonalInformationComponent = ({
         className="lg:w-full md:w-3/4 sm:w-full xs:w-full xxs:w-full xs:h-8 xxs:h-8 mt-2 text-subheading"
         onChange={(e) => setGender(e.target.value)}
       >
-        <input type="radio" name="gender" value="male" /> Male &nbsp; &nbsp;
-        <input type="radio" name="gender" value="female" /> Female
+        <input type="radio" name="gender" value="male"/> Male &nbsp; &nbsp;
+        <input type="radio" name="gender" value="female"/> Female
       </div>
       <NumberField
         id="mobileno"
