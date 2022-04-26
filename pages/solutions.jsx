@@ -109,6 +109,7 @@ const Solutions = () => {
             <p>
               <a
                 href="https://play.google.com/store/apps/details?id=com.StockKnowledge.SKChemistry"
+                target="_blank"
                 className="text-lg text-subheading text-skBlue hover:text-black"
               >
                 DOWNLOAD STOCK KNOWLEDGE VR DEMO ON GOOGLE PLAY
@@ -123,6 +124,7 @@ const Solutions = () => {
                 <a
                   className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1_lbZ5IhXlcnUOk5XozQsPVApJGMmEq4Q/view?usp=sharing"
+                  target="_blank"
                 >
                   Version 13-6
                 </a>
@@ -131,6 +133,7 @@ const Solutions = () => {
                 <a
                   className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1O9hFuADXEK7pwtNonSIO3MKex7hQCfjv/view?usp=sharing"
+                  target="_blank"
                 >
                   Version 14-7
                 </a>
@@ -139,6 +142,7 @@ const Solutions = () => {
                 <a
                   className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1m4OHXbySpCaP9--vupA6dHnqkf61-SrR/view?usp=sharing"
+                  target="_blank"
                 >
                   Version 14-8
                 </a>
@@ -147,6 +151,7 @@ const Solutions = () => {
                 <a
                   className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1dDggaAKPqfemy0NPe6IjcgSVDaqRePPw/view?usp=sharing"
+                  target="_blank"
                 >
                   Version 14-9-4
                 </a>
