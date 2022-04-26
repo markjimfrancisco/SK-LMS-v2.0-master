@@ -94,16 +94,7 @@ const Solutions = () => {
         </div>
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
           <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
-            <p>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.StockKnowledge.StockKnowledgeApp"
-                className="text-lg text-subheading hover:text-skBlue"
-              >
-                Download Stock Knowledge VR on Google Play
-              </a>
-            </p>
-            <br />
-            <h4 className="text-4xl font-bold text-blue-500">XR Mobile App</h4>
+            <h4 className="text-4xl font-bold text-blue-500">Gamified XR Mobile App</h4>
             <p className="text-xl">
               Augmented Reality (AR) & Virtual Reality (VR) learning contents
             </p>
@@ -115,13 +106,22 @@ const Solutions = () => {
               body, exploring lava inside a volcano{" "}
             </p>
             <br />
+            <p>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.StockKnowledge.SKChemistry"
+                className="text-lg text-subheading text-skBlue hover:text-black"
+              >
+                DOWNLOAD STOCK KNOWLEDGE VR DEMO ON GOOGLE PLAY
+              </a>
+            </p>
+            <br />
             <p href="#" className="text-lg text-subheading">
-              DOWNLOAD THE APK FOR AR AND VR CONTENTS
+              Download the APK for AR AND VR contents:
             </p>
             <ul className="text-subheading">
               <li>
                 <a
-                  className=" hover:text-skBlue"
+                  className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1_lbZ5IhXlcnUOk5XozQsPVApJGMmEq4Q/view?usp=sharing"
                 >
                   Version 13-6
@@ -129,7 +129,7 @@ const Solutions = () => {
               </li>
               <li>
                 <a
-                  className=" hover:text-skBlue"
+                  className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1O9hFuADXEK7pwtNonSIO3MKex7hQCfjv/view?usp=sharing"
                 >
                   Version 14-7
@@ -137,10 +137,18 @@ const Solutions = () => {
               </li>
               <li>
                 <a
-                  className=" hover:text-skBlue"
+                  className="text-skBlue hover:text-black"
                   href="https://drive.google.com/file/d/1m4OHXbySpCaP9--vupA6dHnqkf61-SrR/view?usp=sharing"
                 >
                   Version 14-8
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-skBlue hover:text-black"
+                  href="https://drive.google.com/file/d/1dDggaAKPqfemy0NPe6IjcgSVDaqRePPw/view?usp=sharing"
+                >
+                  Version 14-9-4
                 </a>
               </li>
             </ul>
