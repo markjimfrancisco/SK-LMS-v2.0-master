@@ -24,7 +24,7 @@ export default function Home(props) {
 
   const dispatch = useDispatch();
 
-  const [session] = useSession();
+  const [session, loading] = useSession();
 
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const user = useSelector((state) => state.UserReducer);
@@ -127,19 +127,20 @@ export default function Home(props) {
       <MobileNavBar showModal={setLoginModalOpen} />
       <NavBar showModal={setLoginModalOpen} />
       <div id="home" className="sm:w-screen xs:w-screen">
-        <div className="flex lg:flex-row reno:flex-row md:flex-row sm:flex-col xs:flex-col xxs:flex-col reno:w-full md:w-full sm:w-screen xs:w-screen xxs:w-screen h-1/2 lg:mt-20 xs:mt-0 xxs:mt-0">
+        <div className="flex lg:flex-row reno:flex-row md:flex-row sm:flex-col xs:flex-col xxs:flex-col reno:w-full md:w-full sm:w-screen xs:w-screen xxs:w-screen h-1/2 xs:mt-0 xxs:mt-0">
           <div className="lg:w-1/2 md:w-1/2 reno:w-1/2 sm:w-screen xs:w-screen xxs:w-screen lg:pl-10 lg:pt-10 md:pl-10 md:pt-10 reno:pl-10 reno:pt-10 sm:pl-10 xs:pl-10 sm:pt-10 xs:pt-10 xxs:pt-10">
             <h1 className="lg:text-8xl font-bold text-heading md:text-6xl reno:text-6xl sm:text-5xl xs:text-5xl xxs:text-5xl">
-              Learn to Play. <br />
-              Play to Learn.
+              Empowering <br />
+              teachers and<br />
+              learners in the<br />
+              21st century.
             </h1>
             <br />
-            <h2 className="xl:text-4xl lg:text-2xl md:text-lg text-subheading md:leading-snug">
+            <h2 className="xl:text-3xl lg:text-2xl md:text-lg text-subheading md:leading-snug">
               Stock Knowledge brings innovation and education together to
-              provide accessible experiential learning technology that students
+              provide affordable and accessible experiential learning technology that students
               love.
             </h2>
-            <br />
             <br />
             <br />
             <Link href="/#contactus">
@@ -151,7 +152,7 @@ export default function Home(props) {
           <div className="xl:w-1/2 lg:w-1/2 md:w-1/2 reno:w-1/2 sm:w-full xs:w-full xxs:w-full md:mt-0 xs:mt-10 xxs:mt-10">
             <img
               className="md:w-full reno:w-full sm:w-full xs:w-full"
-              src="/images/main-hero.svg"
+              src="/images/mainpage-art2.png"
             />
           </div>
         </div>
@@ -426,7 +427,7 @@ export default function Home(props) {
               >
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <p className="text-subheading">(+63)927-885-3760</p>
+              <p className="text-subheading">(+63)917 523 0927</p>
             </div>
 
             <div className="flex items-center text-blue-500 space-x-2">
@@ -443,7 +444,7 @@ export default function Home(props) {
                 href="mailto:stock.knowledge7@gmail.com "
                 className="text-skBlue lg:text-sm md:text-sm reno:text-sm sm:text-sm xs:text-sm xxs:text-sm"
               >
-                stock.knowledge7@gmail.com
+                stock.knowledge7@gmail.com, info@stockknowledge.org
               </a>
             </div>
 
@@ -485,7 +486,5 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-  return { 
-    props: { 
-      providers: await providers(context) } };
+  return { props: { providers: await providers(context) } };
 }

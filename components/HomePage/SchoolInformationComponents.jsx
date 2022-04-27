@@ -18,9 +18,12 @@ const SchoolInformationComponents = ({
   const [disable, setDisable] = useState(true);
 
   useEffect(() => {
-    if ((school != 1 || (school == 1 && other)) && gradeLevel)
+    if ((school != 1 || (school == 1 && other)))
       setDisable(false);
-    else setDisable(true);
+    if (school == 0)
+      setDisable(true);
+    if (gradeLevel == 0)
+      setDisable(true);
   }, [school, other, gradeLevel]);
 
   return (

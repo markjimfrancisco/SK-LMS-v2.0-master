@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import {
   faBookmark,
   faChartPie,
@@ -6,13 +5,16 @@ import {
   faPlay
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  
   const user = useSelector((state) => state.UserReducer);
+
   const pieChartIcon = (
     <FontAwesomeIcon
       icon={faChartPie}
-      size="2x"
+      size="lg"
       color="lightGray"
       className={`cursor-pointer hover:text-subheading m-auto`}
     />
@@ -21,7 +23,7 @@ const Home = () => {
   const availableCoursesIcon = (
     <FontAwesomeIcon
       icon={faBookmark}
-      size="2x"
+      size="lg"
       color="lightGray"
       className={`cursor-pointer hover:text-subheading m-auto`}
     />
@@ -30,7 +32,7 @@ const Home = () => {
   const completedCoursesIcon = (
     <FontAwesomeIcon
       icon={faCheckDouble}
-      size="2x"
+      size="lg"
       color="lightGray"
       className={`cursor-pointer hover:text-subheading m-auto`}
     />
@@ -47,7 +49,7 @@ const Home = () => {
 
   return (
     <div className="relative w-1/2 p-10 flex flex-col border min-h-content bg-blue-50 space-y-4">
-      <div className="w-full h-72 border relative">
+      <div className="w-full h-50 border relative">
         <img className="w-full h-full" src="/images/dashboard-content-1.svg" />
         <p className="absolute top-8 left-8 text-skBlue font-semibold text-5xl">
           Hi {user.data && `${user.data.firstname}`},
@@ -60,7 +62,7 @@ const Home = () => {
         <div className="h-84 w-227 flex bg-white border rounded-2xl">
           <div className="w-1/3 h-full flex items-center">{pieChartIcon}</div>
           <div className="flex flex-col justify-center h-full w-3/4">
-            <p className="text-skBlue font-bold text-4xl">20</p>
+            <p className="text-skBlue font-bold text-3xl">20</p>
             <p className="font-semibold text-subheading">Ongoing Courses</p>
           </div>
         </div>
@@ -69,7 +71,7 @@ const Home = () => {
             {availableCoursesIcon}
           </div>
           <div className="flex flex-col justify-center h-full w-3/4">
-            <p className="text-skBlue font-bold text-4xl">6</p>
+            <p className="text-skBlue font-bold text-3xl">6</p>
             <p className="font-semibold text-subheading">Available Courses</p>
           </div>
         </div>
@@ -78,7 +80,7 @@ const Home = () => {
             {completedCoursesIcon}
           </div>
           <div className="flex flex-col justify-center h-full w-3/4">
-            <p className="text-skBlue font-bold text-4xl">1</p>
+            <p className="text-skBlue font-bold text-3xl">1</p>
             <p className="font-semibold text-subheading">Completed Courses</p>
           </div>
         </div>

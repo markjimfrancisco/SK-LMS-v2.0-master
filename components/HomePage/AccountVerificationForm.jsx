@@ -34,8 +34,6 @@ const AccountVerificationForm = ({ showModal, setForm, userid }) => {
       dispatch(DoAccountVerification(accountVerified.success));
     } else{ 
       setToSubmit(false);
-      dispatch(UserLogout(false));
-      setForm("login");
     }
   }, [accountVerified]);
 

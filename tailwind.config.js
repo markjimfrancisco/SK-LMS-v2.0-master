@@ -29,17 +29,17 @@ module.exports = {
       subjtext: '#616161'
       
     },
-    // fontFamily: {
-    //   avenir: 'Avenir'
-    // },
+    fontFamily: {
+      avenir: 'Avenir'
+    },
     extend: {
-      // container: {
-      //   center: true,
-      //   screens: {
-      //     lg: '1024px',
-      //     xl: '1280px',
-      //   },
-      // },
+      container: {
+        center: true,
+        screens: {
+          lg: '1024px',
+          xl: '1280px',
+        },
+      },
       width: {
         'height':'100vh'
       },
