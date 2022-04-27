@@ -20,7 +20,14 @@ module.exports = {
       subheading: '#616161',
       skBlue: '#0080F6',
       skBlueInactive: '#B8DDFF',
-      lightGray: '#B5B5B5'
+      lightGray: '#B5B5B5',
+      M1vio: '#0080F6' ,
+      M2blue: '#1333D9' ,
+      M3green: '#10B4AA' ,
+      earthblue: '#D0C0E4' ,
+      biogreen: '#63BB4A' ,
+      subjtext: '#616161'
+      
     },
     // fontFamily: {
     //   avenir: 'Avenir'
