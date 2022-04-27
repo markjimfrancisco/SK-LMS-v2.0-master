@@ -35,17 +35,20 @@ const SecondaryMenu = () => {
 
   const bellIcon = (
     <FontAwesomeIcon
+    onClick={() => { 
+    }}
       icon={faBell}
       size="lg"
       className={`text-skBlue cursor-pointer`}
     />
+
   );
   return (
     <div className="z-20 fixed right-0 flex h-20 w-96 mr-4 items-center justify-end space-x-4">
       <div className="h-1/2 flex items-center space-x-2 border-r px-4 ">
         {questionMarkIcon}
         {gearIcon}
-        {bellIcon}
+        {bellIcon}   
       </div>
       <div className="group relative flex items-center space-x-2">
         <MiniProfile />
