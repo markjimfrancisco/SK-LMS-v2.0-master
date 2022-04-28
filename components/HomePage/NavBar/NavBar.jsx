@@ -28,7 +28,7 @@ const NavBar = ({ showModal }) => {
 
   return (
     <div
-      className={`xxs:hidden md:flex sm:hidden xs:hidden lg:w-full reno:w-full md:w-full sm:w-screen xs:w-screen p-4 h-20 justify-between items-center`}
+      className={`xxs:hidden md:flex sm:hidden xs:hidden lg:w-full reno:w-full md:w-full sm:w-screen xs:w-screen p-4 h-20 justify-between items-center sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-50`}
     >
       <a
         href="/"
@@ -44,28 +44,28 @@ const NavBar = ({ showModal }) => {
       >
         <ul className="flex items-center justify-around w-full lg:text-base md:text-xs space-x-4">
           <li>
-            <a href="/#home">Home</a>
+            <a href="/#home" className="hover:text-skBlue">Home</a>
           </li>
           <li>
-            <a href="/#solution">Solutions</a>
+            <a href="/#solution" className="hover:text-skBlue">Solutions</a>
           </li>
           <li>
-            <a href="/#story">Story</a>
+            <a href="/#story" className="hover:text-skBlue">Story</a>
           </li>
           <li>
-            <a href="/#team">Team</a>
+            <a href="/#team" className="hover:text-skBlue">Team</a>
           </li>
           <li>
-            <a href="/#testimonial">Testimonials</a>
+            <a href="/#testimonial" className="hover:text-skBlue">Testimonials</a>
           </li>
           <li>
-            <a href="/#partners">Partners</a>
+            <a href="/#partners" className="hover:text-skBlue">Partners</a>
           </li>
           <li>
-            <a href="/#articles">Articles</a>
+            <a href="/#articles" className="hover:text-skBlue">Articles</a>
           </li>
           <li>
-            <a href="/#contactus">Contact Us</a>
+            <a href="/#contactus" className="hover:text-skBlue">Contact Us</a>
           </li>
           <li>{cartIcon}</li>
           <li>
