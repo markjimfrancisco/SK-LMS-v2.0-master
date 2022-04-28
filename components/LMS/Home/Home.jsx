@@ -58,16 +58,16 @@ const Home = () => {
           Welcome Back! What will you learn today?
         </p>
       </div>
-      <div className=" flex justify-evenly ">
-        <div className="h-84 w-227 flex bg-white border rounded-2xl">
-          <div className="w-1/3 h-full flex items-center">{pieChartIcon}</div>
+      <div className="w-full h-20 top-2 flex justify-around relative">
+        <div className="h-84 w-56 flex bg-white border rounded-2xl">
+          <div className="w-1/4 h-full flex items-center">{pieChartIcon}</div>
           <div className="flex flex-col justify-center h-full w-3/4">
             <p className="text-skBlue font-bold text-3xl">20</p>
             <p className="font-semibold text-subheading">Ongoing Courses</p>
           </div>
         </div>
-        <div className="h-84 w-227 flex bg-white border rounded-2xl">
-          <div className="w-1/3 h-full flex items-center">
+        <div className="h-84 w-56 flex bg-white border rounded-2xl">
+          <div className="w-1/4 h-full flex items-center">
             {availableCoursesIcon}
           </div>
           <div className="flex flex-col justify-center h-full w-3/4">
@@ -75,8 +75,8 @@ const Home = () => {
             <p className="font-semibold text-subheading">Available Courses</p>
           </div>
         </div>
-        <div className="h-84 w-227 flex bg-white border rounded-2xl">
-          <div className="w-1/3 h-full flex items-center">
+        <div className="h-84 w-56 flex bg-white border rounded-2xl">
+          <div className="w-1/4 h-full flex items-center">
             {completedCoursesIcon}
           </div>
           <div className="flex flex-col justify-center h-full w-3/4">
@@ -85,7 +85,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+      <br />
       <div> <p className="font-semibold pb-4">My Modules</p>
       <div className="flex flex-row justify-evenly">
 
