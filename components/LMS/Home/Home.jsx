@@ -54,7 +54,7 @@ const Home = () => {
         <p className="absolute top-8 left-8 text-skBlue font-semibold text-5xl">
           Hi {user.data && `${user.data.firstname}`},
         </p>
-        <p className="absolute bottom-20 left-8 text-white text-2x2 ">
+        <p className="absolute bottom-2 left-8 text-white text-2x2 ">
           Welcome Back! What will you learn today?
         </p>
       </div>
