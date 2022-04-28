@@ -69,11 +69,18 @@ const Solutions = () => {
       <MobileNavbar showModal={setLoginModalOpen} />
       <NavBar showModal={setLoginModalOpen} />
       <div id="home" className="sm:w-screen xs:w-screen">
-        <div className="hero text-white px-20 py-10 space-y-2 md:w-full xs:w-screen">
+        <div className="text-white px-20 py-44 space-y-2 md:w-full xs:w-screen"
+            style={{
+              background:
+                "url('images/Our_Offers.png') no-repeat",
+              backgroundSize: "cover"
+            }}>
           <h1 className="text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-full lg:w-full md:w-full reno:w-full sm:w-full xs:w-full font-bold">
             Our Offers
           </h1>
         </div>
+        <br />
+        <br />
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
           <div className="md:w-1/2 flex justify-end px-14">
             <img src={`${process.env.ASSETS_DOMAIN}/public/01-lms.png`} />
