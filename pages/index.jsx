@@ -275,7 +275,7 @@ export default function Home(props) {
           </p>
         </div>
         <div className="lg:w-1/2 relative space-y-10 md:p-20 reno:p-20 lg:p-20 sm:p-6 xs:p-6 xxs:p-6 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen">
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto">
+          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
             <h6 className="text-2xl font-bold text-blue-400">Mission</h6>
             <br />
             <p>
@@ -283,7 +283,7 @@ export default function Home(props) {
               cutting-edge digital tools.
             </p>
           </div>
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto">
+          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
             <h6 className="text-2xl font-bold text-blue-400">Vision</h6>
             <br />
             <p>
@@ -291,7 +291,7 @@ export default function Home(props) {
               age.
             </p>
           </div>
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto">
+          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
             <h6 className="text-2xl font-bold text-blue-400">Core Values</h6>
             <br />
             <p>
@@ -345,17 +345,58 @@ export default function Home(props) {
           </span>
         </h6>
         <div className="lg:w-3/4 reno:w-full md:w-full sm:w-full xs:w-full xxs:w-full lg:px-0 md:px-20 reno:px-52 flex justify-around flex-wrap lg:pb-0 reno:pb-10 md:pb-10 sm:pb-10 xs:pb-10 xxs:pb-10">
-          <img className="w-40" src="/images/unicef.svg" />
-          <img className="" src="/images/QBO.svg" />
-          <img className="" src="/images/AIM.svg" />
-          <img className="w-24" src="/images/deped-manila.svg" />
-          <img className="w-24" src="/images/deped-makati.svg" />
+          <img className="w-40 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/unicef.svg" />
+          <img className="transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/QBO.svg" />
+          <img className="transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/AIM.svg" />
+          <img className="w-24 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/deped-manila.svg" />
+          <img className="w-24 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/deped-makati.svg" />
         </div>
       </div>
       <div
         id="articles"
         className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen"
       >
+        <div className="text-center lg:w-full md:w-full reno:w-full sm:w-screen xs:w-sceen xxs:w-screen lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 mb-16">
+          Media Mention
+          <div className="relative top-11 w-full text-xl flex lg:items-center justify-center space-x-8">
+            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+              <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
+              target="_blank">
+                  <img src="images/manila-bulletin.png"/>
+              </a>
+              <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
+              className="hover:text-skBlue text-sm"
+              target="_blank">
+                Local EdTech startup Finally Seeing the Light of Day via
+                Government Support Amid COVID-19
+              </a>
+            </div>
+            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+              <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
+              target="_blank">
+                  <img src="images/newsbytes.png"/>
+              </a>
+              <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
+              className="hover:text-skBlue text-sm"
+              target="_blank">
+                PH startup pilots ‘gamified’ edtech platform in DepEd Makati, Manila
+              </a>
+            </div>
+            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+              <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
+              target="_blank">
+                  <img src="images/business_mirror.png"/>
+              </a>
+              <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
+              className="hover:text-skBlue text-sm"
+              target="_blank">
+                Stock Knowledge, DepEd Makati join forces to launch EdTech platform
+              </a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
         <ArticleCarouselLayout />
       </div>
       <div
