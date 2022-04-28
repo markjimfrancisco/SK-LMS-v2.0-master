@@ -82,7 +82,7 @@ const Solutions = () => {
         <br />
         <br />
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-          <div className="md:w-1/2 flex justify-end px-14">
+          <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/01-lms.png`} />
           </div>
           <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -165,12 +165,12 @@ const Solutions = () => {
               </li>
             </ul>
           </div>
-          <div className="md:w-1/2 px-14">
+          <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/02 - XR.png`} />
           </div>
         </div>
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-          <div className="md:w-1/2 flex justify-end px-14">
+          <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img
               src={`${process.env.ASSETS_DOMAIN}/public/03 - gamified.png`}
             />
@@ -200,14 +200,14 @@ const Solutions = () => {
               personalized studying
             </p>
           </div>
-          <div className="md:w-1/2 px-14">
+          <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img
               src={`${process.env.ASSETS_DOMAIN}/public/04 - adaptive.png`}
             />
           </div>
         </div>
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-          <div className="md:w-1/2 flex justify-end px-14">
+          <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/05 - tech.png`} />
           </div>
           <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -230,7 +230,7 @@ const Solutions = () => {
               Needed to enjoy Stock Knowledge XR and webXR contents
             </p>
           </div>
-          <div className="md:w-1/2 px-14">
+          <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/06 - vrbox.png`} />
           </div>
         </div>
