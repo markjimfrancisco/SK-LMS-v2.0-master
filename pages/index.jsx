@@ -182,7 +182,7 @@ export default function Home(props) {
         <br />
       </div>
       <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-        <div className="md:w-1/2 flex justify-end px-14">
+        <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/fullyimmersive.svg" />
         </div>
         <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -203,12 +203,12 @@ export default function Home(props) {
             engaging way
           </p>
         </div>
-        <div className="md:w-1/2 px-14">
+        <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/gamification.svg" />
         </div>
       </div>
       <div className="md:w-full md:flex-row xs:w-screen xxs:w-screen xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-        <div className="md:w-1/2 flex justify-end px-14">
+        <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/device.svg" />
         </div>
         <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -231,7 +231,7 @@ export default function Home(props) {
             address each student’s unique needs
           </p>
         </div>
-        <div className="md:w-1/2 px-14">
+        <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/adaptive.svg" />
         </div>
       </div>
