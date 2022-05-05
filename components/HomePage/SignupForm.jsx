@@ -61,11 +61,8 @@ const SignupForm = ({ setForm }) => {
         {step > 1 && leftAngleBracketLarge}
         {step > 1 && leftAngleBracketSmall}
         <label className="lg:w-full md:w-3/4 sm:w-full xs:w-3/4 xxs:w-3/4 xxs:text-xl text-left text-lg font-semibold text-subheading">
-          {step == 1 && "Name Infomation"}
+          {step == 1 && "Account Details"}
           {step == 2 && "Personal Information"}
-          {step == 3 && "School Information"}
-          {step == 4 && "Interest"}
-          {step == 5 && "Sign Up Details"}
         </label>
       </div>
       <div className="w-full flex space-x-2 my-4">
@@ -79,7 +76,7 @@ const SignupForm = ({ setForm }) => {
             step > 1 ? "bg-skBlue" : "bg-skBlueInactive"
           } h-1 w-full rounded-xl`}
         ></div>
-        <div
+        {/* <div
           className={`${
             step > 2 ? "bg-skBlue" : "bg-skBlueInactive"
           } h-1 w-full rounded-xl`}
@@ -93,7 +90,7 @@ const SignupForm = ({ setForm }) => {
           className={`${
             step > 4 ? "bg-skBlue" : "bg-skBlueInactive"
           } h-1 w-full rounded-xl`}
-        ></div>
+        ></div> */}
       </div>
       {step === 1 && (
         <NameInformationComponents
@@ -103,14 +100,22 @@ const SignupForm = ({ setForm }) => {
           setFirstName={setFirstName}
           setMiddleName={setMiddleName}
           setLastName={setLastName}
+          email={email}
+          username={username}
+          password={password}
+          setEmail={setEmail}
+          setUsername={setUsername}
+          setPassword={setPassword}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
           setStep={setStep}
         />
       )}
       {step === 2 && (
         <PersonalInformationComponent
-          month={month}
-          day={day}
-          year={year}
+          month={parseInt(month)}
+          day={parseInt(day)}
+          year={parseInt(year)}
           setMonth={setMonth}
           setDay={setDay}
           setYear={setYear}
@@ -118,10 +123,27 @@ const SignupForm = ({ setForm }) => {
           setGender={setGender}
           mobileno={mobileno}
           setMobileNo={setMobileNo}
-          setStep={setStep}
+          school={school}
+          other={other}
+          gradeLevel={gradeLevel}
+          setSchool={setSchool}
+          setOther={setOther}
+          setGradeLevel={setGradeLevel}
+          favoriteSubject={favoriteSubject}
+          careerGoal={careerGoal}
+          setFavoriteSubject={setFavoriteSubject}
+          setCareerGoal={setCareerGoal}
+          email={email}
+          username={username}
+          password={password}
+          confirmPassword={confirmPassword}
+          firstName={firstName}
+          middleName={middleName}
+          lastName={lastName}
+          setForm={setForm}
         />
       )}
-      {step === 3 && (
+      {/* {step === 3 && (
         <SchoolInformationComponents
           school={school}
           other={other}
@@ -166,7 +188,7 @@ const SignupForm = ({ setForm }) => {
           careerGoal={careerGoal}
           setForm={setForm}
         />
-      )}
+      )} */}
       <a
         onClick={() => {
           setForm("login");
