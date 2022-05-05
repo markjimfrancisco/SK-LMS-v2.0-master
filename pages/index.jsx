@@ -359,7 +359,7 @@ export default function Home(props) {
         <div className="text-center lg:w-full md:w-full reno:w-full sm:w-screen xs:w-sceen xxs:w-screen lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 mb-16">
           Media Mention
           <div className="relative top-11 w-full text-xl flex lg:items-center justify-center space-x-8">
-            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
               <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
               target="_blank">
                   <img src="images/manila-bulletin.png"/>
@@ -371,7 +371,7 @@ export default function Home(props) {
                 Government Support Amid COVID-19
               </a>
             </div>
-            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
               <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
               target="_blank">
                   <img src="images/newsbytes.png"/>
@@ -382,7 +382,7 @@ export default function Home(props) {
                 PH startup pilots ‘gamified’ edtech platform in DepEd Makati, Manila
               </a>
             </div>
-            <div className="rounded-lg h-72 w-96 shadow-lg transform hover:bg-transparent transition duration-500 hover:scale-105">
+            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
               <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
               target="_blank">
                   <img src="images/business_mirror.png"/>
