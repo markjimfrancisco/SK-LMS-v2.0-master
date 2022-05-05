@@ -17,14 +17,14 @@ const SchoolInformationComponents = ({
 
   const [disable, setDisable] = useState(true);
 
-  useEffect(() => {
-    if ((school != 1 || (school == 1 && other)))
-      setDisable(false);
-    if (school == 0)
-      setDisable(true);
-    if (gradeLevel == 0)
-      setDisable(true);
-  }, [school, other, gradeLevel]);
+  // useEffect(() => {
+  //   if ((school != 1 || (school == 1 && other)))
+  //     setDisable(false);
+  //   if (school == 0)
+  //     setDisable(true);
+  //   if (gradeLevel == 0)
+  //     setDisable(true);
+  // }, [school, other, gradeLevel]);
 
   return (
     <>
@@ -59,7 +59,7 @@ const SchoolInformationComponents = ({
         compare="name"
         placeholder="Grade Level"
       />
-      <button
+      {/* <button
         disabled={disable ? true : false}
         onClick={() => {
           setStep(4);
@@ -67,7 +67,7 @@ const SchoolInformationComponents = ({
         className="bg-blue-500 text-white text-xl font-semibold w-full mt-2 lg:py-3 1080:py-3 reno:py-3 sm:py-2 xs: py-2 rounded-full disabled:opacity-50"
       >
         Next
-      </button>
+      </button> */}
     </>
   );
 };
