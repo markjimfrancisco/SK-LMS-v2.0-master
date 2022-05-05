@@ -53,7 +53,17 @@ const NameInfomationComponents = ({
     ) {
       setDisable(false);
     } else setDisable(true);
-  }, [firstName, middleName, lastName, username, password, email, confirmPassword, userAgree]);
+
+    if (
+      username &&
+      firstName &&
+      middleName &&
+      lastName &&
+      userAgree
+    )
+      setDisable(false);
+    else setDisable(true);
+  });
 
   return (
     <>
