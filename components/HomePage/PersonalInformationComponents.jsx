@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
 import { useHttp } from "../../hooks/http";
+import { usePostHttp } from "../../hooks/postHttp";
+import { DoLogin } from "../../redux/actions/UserAction";
+import { useDispatch, useSelector } from "react-redux";
 import NumberField from "../NumberField";
 import Select from "../Select";
+import InterestComponents from "./InterestComponents";
+import SchoolInformationComponents from "./SchoolInformationComponents";
 
 const PersonalInformationComponent = ({
-  month,
-  setMonth,
-  day,
-  setDay,
-  year,
-  setYear,
-  gender,
-  setGender,
-  mobileno,
-  setMobileNo,
-  setStep,
+  email, username,
+  password, confirmPassword,
+  firstName, middleName, lastName,
+  month, setMonth,
+  day, setDay,
+  year, setYear,
+  gender, setGender,
+  mobileno, setMobileNo,
+  school, setSchool,
+  other, setOther,
+  gradeLevel, setGradeLevel,
+  favoriteSubject, setFavoriteSubject,
+  careerGoal, setCareerGoal,
+  setForm,
 }) => {  
 
   const [years, setYears] = useState([
@@ -33,13 +41,41 @@ const PersonalInformationComponent = ({
   // const [year, setYear] = useState("");
   // const [day, setDay] = useState("");
   const [monthLong, setMonthLong] = useState(0);
+
+  const user = useSelector((state) => state.UserReducer);
+  const dispatch = useDispatch();
+
+  const [createAccount, setCreateAccount] = useState(false);
   const [disable, setDisable] = useState(true);
 
   const [daysLoading, days] = useHttp(`/calendar/days?monthlong=${monthLong}`, [monthLong]);
-  
 
   useEffect(() => {
-    if (mobileno.match(/^[0-9]*/) == mobileno && mobileno != "" && gender)
+    if(year && month)
+      setMonthLong(new Date(year, month + 1, 0).getDate() + 1)
+  },[year, month])
+
+  useEffect(() => {
+    if ((school != 1 || (school == 1 && other)))
+      setDisable(false);
+    if (school == 0)
+      setDisable(true);
+    if (gradeLevel == 0)
+      setDisable(true);
+  }, [school, other, gradeLevel]);
+
+  useEffect(()=>{
+    if(favoriteSubject && 
+      favoriteSubject.match(/^[A-Za-z ]*/)[0] == favoriteSubject && 
+      careerGoal && 
+      careerGoal.match(/^[A-Za-z ]*/)[0] == careerGoal)
+      setDisable(false);
+    else
+      setDisable(true);
+  },[favoriteSubject, careerGoal])
+
+  useEffect(() => {
+    if (mobileno.match(/^[0-9]*/) == mobileno && mobileno != "")
       setDisable(true);
     if (mobileno.length == 11)
       setDisable(false);
@@ -52,9 +88,92 @@ const PersonalInformationComponent = ({
   }, [gender, mobileno]);
 
   useEffect(() => {
-    if(year && month)
-      setMonthLong(new Date(year, month + 1, 0).getDate() + 1)
-  },[year, month])
+    if (year != "" &&
+    month != "" &&
+    day != "")
+      setDisable(true);
+    else
+      setDisable(false);
+  }, [year, month, day]);
+
+  useEffect(() => {
+    if (username && 
+      password &&
+      email &&
+      firstName && lastName && middleName &&
+      typeof month === "number" &&
+      typeof day === "number" &&
+      typeof year === "number" &&
+      gender &&
+      school &&
+      gradeLevel &&
+      favoriteSubject &&
+      careerGoal)
+      setDisable(false);
+    else
+      setDisable(true);
+  });
+
+  const [creatingAccount, userData] = usePostHttp(
+    !user.isLogin && createAccount
+      ? {
+          username,
+          email,
+          password,
+          firstName,
+          middleName,
+          lastName,
+          mobileno,
+          gender,
+          dateofbirth: `${year}-${month + 1}-${day}`,
+          school,
+          other,
+          gradeLevel,
+          favoriteSubject,
+          careerGoal,
+        }
+      : null,
+    "/register/student"
+  );
+
+  const [creatingAuthAccount, userAuthData] = usePostHttp(
+    user.isLogin && !user.data.username && createAccount
+      ? {
+          studentid: user.data.id,
+          userid: user.data.userid,
+          username,
+          firstName,
+          middleName,
+          lastName,
+          mobileno,
+          gender,
+          dateofbirth: `${year}-${month + 1}-${day}`,
+          school,
+          other,
+          gradeLevel,
+          favoriteSubject,
+          careerGoal,
+        }
+      : null,
+    "/register/auth/student"
+  );
+
+  useEffect(() => {
+    if (userData.success) {
+      dispatch(DoLogin(true, userData.result[0]));
+      setForm("account-verification");
+      // router.push('https://drive.google.com/drive/folders/1JAKiumWmxsYbFoz5p97DtG9y3mzUDYxy');
+    }
+  }, [userData]);
+
+  useEffect(() => {
+    if (userAuthData.success) {
+      dispatch(DoLogin(true, userAuthData.result));
+      setForm("account-verification");
+      // router.push('https://drive.google.com/drive/folders/1JAKiumWmxsYbFoz5p97DtG9y3mzUDYxy');
+    }
+  }, [userAuthData]);
+
     
   return (
     <>
@@ -140,14 +259,37 @@ const PersonalInformationComponent = ({
         setValue={setMobileNo}
         placeholder="Mobile Number (11 digits)"
       />
+      <br />
+      <label className="lg:w-full md:w-3/4 sm:w-full xs:w-full xxs:w-full xs:h-8 xxs:h-8 text-left text-lg mt-2 font-semibold text-subheading">
+        School Information
+      </label>
+      <SchoolInformationComponents
+        school={school}
+        other={other}
+        gradeLevel={gradeLevel}
+        setSchool={setSchool}
+        setOther={setOther}
+        setGradeLevel={setGradeLevel}
+      />
+      <br />
+      <label className="lg:w-full md:w-3/4 sm:w-full xs:w-full xxs:w-full xs:h-8 xxs:h-8 text-left text-lg mt-2 font-semibold text-subheading">
+        Interest
+      </label>
+      <InterestComponents
+          favoriteSubject={favoriteSubject}
+          careerGoal={careerGoal}
+          setFavoriteSubject={setFavoriteSubject}
+          setCareerGoal={setCareerGoal}
+      />
+
       <button
         disabled={disable ? true : false}
         onClick={() => {
-          setStep(3);
+          setCreateAccount(true);
         }}
-        className="bg-blue-500 text-white text-xl font-semibold w-full mt-2 lg:py-3 1080:py-3 reno:py-3 sm:py-2 xs:py-2 xxs:py-2 rounded-full disabled:opacity-50"
+        className="bg-blue-500 text-white text-xl font-semibold lg:w-full md:w-full sm:w-full xs:w-11/12 xxs:w-11/12 lg:mt-10 md:mt-10 sm:mt-2 py-3 rounded-full disabled:opacity-50"
       >
-        Next
+        Submit
       </button>
     </>
   );
