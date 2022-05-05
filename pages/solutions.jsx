@@ -234,6 +234,36 @@ const Solutions = () => {
             <img src={`${process.env.ASSETS_DOMAIN}/public/06 - vrbox.png`} />
           </div>
         </div>
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+          <div className="md:w-1/2 flex justify-end px-14">
+            <iframe width="570" height="325" src="https://www.youtube.com/embed/Q-NHEO2IS3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
+            <h4 className="text-4xl font-bold text-blue-500">
+              Stock Knowledge Education
+            </h4>
+            <br />
+            <p className="text-xl text-subheading">
+            Stock Knowledge provides affordable and accessible digital, experiential learning technologies using games, 
+            augmented reality, virtual reality, and AI to make the learning process more fun, engaging, and effective.
+            </p>
+          </div>
+        </div>
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+          <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
+            <h4 className="text-4xl font-bold text-blue-500">Stock Knowledge Enterprise</h4>
+            <br />
+            <p className="text-xl text-subheading">
+              Stock Knowledge provides cutting-edge products and services to Enterprise customers for their digital training needs. The customized gamified, 
+              fully immersive content via web and mobile extended reality (XR- AR, VR, MR) applications enables companies to upskill and <br /> reskill their 
+              employees effectively and efficiently. The applications offer 70-100% improved employee performance, cost-efficient, and 80% better 
+              management of employees anytime, anywhere.
+            </p>
+          </div>
+          <div className="md:w-1/2 px-14">
+            <iframe width="570" height="325" src="https://www.youtube.com/embed/iqcDXUMro9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
         <div className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen lg:items-center reno:items-start md:items-start sm:items-start xs:items-start xxs:items-start flex bg-blue-100 lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 p-4 lg:flex-row reno:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col">
           <h6
             id="partners"
