@@ -70,7 +70,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className="w-44 flex items-center justify-center border text-xl text-subheading p-2 rounded-full"
+                  className="w-40 flex items-center justify-center border text-xl text-subheading p-1 rounded-full"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ const LoginForm = ({ providers, session, showModal, setForm }) => {
                   onClick= {() => {
                     signIn(provider.id);
                   }}
-                  className="w-44 flex items-center text-center justify-center border text-xl text-subheading p-2 rounded-full">
+                  className="w-40 flex items-center text-center justify-center border text-xl text-subheading p-1 rounded-full">
                   <svg
                     className="w-8 h-8"
                     viewBox="0 0 24 24"
