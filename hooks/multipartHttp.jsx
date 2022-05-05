@@ -17,11 +17,6 @@ export const useMultipartHttp = (data, endpoint) => {
       console.log(data);
       fetch(`${process.env.SERVER_DOMAIN}${endpoint}`, {
         method: "POST",
-        credentials: "include",
-        headers: {
-          "Access-Control-Allow-Origin": process.env.WEBSITE_DOMAIN,
-          token: cookies["token"],
-        },
         body: data,
       })
         .then((res) => {

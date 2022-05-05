@@ -16,12 +16,7 @@ export const usePostHttp = (data, endpoint) => {
     if (isLoading)
       fetch(`${process.env.SERVER_DOMAIN}${endpoint}`, {
         method: "POST",
-        credentials: 'include',
-        headers: { 
-          "Content-Type": "application/json",
-          'Access-Control-Allow-Origin': process.env.WEBSITE_DOMAIN,
-          "token": cookies['token']
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           data,
         }),

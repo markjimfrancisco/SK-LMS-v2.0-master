@@ -9,13 +9,7 @@ export const useHttp = (url, dependencies) => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(`${process.env.SERVER_DOMAIN}${url}`, {
-      credentials: "include",
-      headers: {
-        "Access-Control-Allow-Origin": process.env.WEBSITE_DOMAIN,
-        token: cookies["token"],
-      },
-    })
+    fetch(`${process.env.SERVER_DOMAIN}${url}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch.');
