@@ -11,12 +11,12 @@ const InterestComponents = ({
 }) => {
   const [disable, setDisable] = useState(true);
 
-  useEffect(()=>{
-    if(favoriteSubject && favoriteSubject.match(/^[A-Za-z ]*/)[0] == favoriteSubject && careerGoal && careerGoal.match(/^[A-Za-z ]*/)[0] == careerGoal)
-      setDisable(false);
-    else
-      setDisable(true);
-  },[favoriteSubject, careerGoal])
+  // useEffect(()=>{
+  //   if(favoriteSubject && favoriteSubject.match(/^[A-Za-z ]*/)[0] == favoriteSubject && careerGoal && careerGoal.match(/^[A-Za-z ]*/)[0] == careerGoal)
+  //     setDisable(false);
+  //   else
+  //     setDisable(true);
+  // },[favoriteSubject, careerGoal])
 
   return (
     <>
@@ -32,12 +32,12 @@ const InterestComponents = ({
         id="career-goal"
         value={careerGoal}
         setValue={setCareerGoal}
-        classNames="lg:w-full md:w-full sm:w-full xs:w-full mt-2 rounded-xl border border-lightGray placeholder-lightGray"
+        classNames="lg:w-full md:w-full sm:w-full xs:w-full mt-2 resize-none pt-4 py-12 overflow-y-hidden rounded-xl border border-lightGray placeholder-lightGray"
         setValue={setCareerGoal}
         value={careerGoal}
         placeholder="Academic or Career Goal"
       />
-      <button
+      {/* <button
         disabled={disable ? true : false}
         onClick={() => {
           setStep(5);
@@ -45,7 +45,7 @@ const InterestComponents = ({
         className="bg-blue-500 text-white text-xl font-semibold w-full mt-10 py-3 rounded-full disabled:opacity-50"
       >
         Next
-      </button>
+      </button> */}
     </>
   );
 };
