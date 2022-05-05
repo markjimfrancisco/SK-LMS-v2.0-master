@@ -97,9 +97,7 @@ const PersonalInformationComponent = ({
   }, [year, month, day]);
 
   useEffect(() => {
-    if (username && 
-      password &&
-      email &&
+    if (username &&
       firstName && lastName && middleName &&
       typeof month === "number" &&
       typeof day === "number" &&
