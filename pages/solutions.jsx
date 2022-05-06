@@ -235,8 +235,8 @@ const Solutions = () => {
           </div>
         </div>
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-          <div className="md:w-1/2 flex justify-end px-14">
-            <iframe width="570" height="325" src="https://www.youtube.com/embed/Q-NHEO2IS3s?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+          <div className="iframe-container justify-end md:w-1/2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Q-NHEO2IS3s?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
           <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
             <h4 className="text-4xl font-bold text-blue-500">
@@ -260,8 +260,8 @@ const Solutions = () => {
               management of employees anytime, anywhere.
             </p>
           </div>
-          <div className="md:w-1/2 px-14">
-            <iframe width="570" height="325" src="https://www.youtube.com/embed/iqcDXUMro9c?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+          <div className="iframe-container justify-end md:w-1/2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iqcDXUMro9c?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
         </div>
         <div className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen lg:items-center reno:items-start md:items-start sm:items-start xs:items-start xxs:items-start flex bg-blue-100 lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 p-4 lg:flex-row reno:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col">
