@@ -235,7 +235,7 @@ const Solutions = () => {
           </div>
         </div>
         <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
-          <div className="iframe-container justify-end md:w-1/2">
+          <div className="md:w-1/2 flex justify-end iframe-container border-box border-8 border-skBlue">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Q-NHEO2IS3s?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
           <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -255,12 +255,12 @@ const Solutions = () => {
             <br />
             <p className="text-xl text-subheading">
               Stock Knowledge provides cutting-edge products and services to Enterprise customers for their digital training needs. The customized gamified, 
-              fully immersive content via web and mobile extended reality (XR- AR, VR, MR) applications enables companies to upskill and <br /> reskill their 
+              fully immersive content via web and mobile extended reality (XR- AR, VR, MR) applications enables companies to upskill and reskill their 
               employees effectively and efficiently. The applications offer 70-100% improved employee performance, cost-efficient, and 80% better 
               management of employees anytime, anywhere.
             </p>
           </div>
-          <div className="iframe-container justify-end md:w-1/2">
+          <div className="md:w-1/2 iframe-container border-box border-8 border-skBlue">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/iqcDXUMro9c?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
         </div>
