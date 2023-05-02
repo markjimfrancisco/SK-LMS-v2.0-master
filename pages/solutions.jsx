@@ -10,6 +10,8 @@ import NavBar from "../components/HomePage/NavBar/NavBar";
 import { useHttp } from "../hooks/http";
 import { usePostHttp } from "../hooks/postHttp";
 import { useUserManagementHook } from "../hooks/userManagementHook";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Solutions = () => {
   useUserManagementHook();
@@ -51,6 +53,16 @@ const Solutions = () => {
     if (forgotpassword) setLoginModalOpen(true);
   }, [forgotpassword]);
 
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+
+    // Add this CSS rule to disable the horizontal scrollbar
+    document.body.style.overflowX = 'hidden';
+    return () => {
+      document.body.style.overflowX = 'auto'; // Restore the default behavior of the horizontal scrollbar when the component unmounts
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -75,13 +87,13 @@ const Solutions = () => {
                 "url('images/Our_Offers.png') no-repeat",
               backgroundSize: "cover"
             }}>
-          <h1 className="text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-full lg:w-full md:w-full reno:w-full sm:w-full xs:w-full font-bold">
+          <h1 className="text-center xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-full lg:w-full md:w-full reno:w-full sm:w-full xs:w-full font-bold" data-aos="fade-up">
             Our Offers
           </h1>
         </div>
         <br />
         <br />
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right">
           <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/01-lms.png`} />
           </div>
@@ -99,7 +111,7 @@ const Solutions = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="fade-left" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
             <h4 className="text-4xl font-bold text-blue-500">Gamified XR Mobile App</h4>
             <p className="text-xl">
@@ -169,7 +181,7 @@ const Solutions = () => {
             <img src={`${process.env.ASSETS_DOMAIN}/public/02 - XR.png`} />
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img
               src={`${process.env.ASSETS_DOMAIN}/public/03 - gamified.png`}
@@ -187,7 +199,7 @@ const Solutions = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="fade-left" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
             <p className="text-4xl font-bold text-blue-500">
               Adaptive Learning
@@ -206,7 +218,7 @@ const Solutions = () => {
             />
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
             <img src={`${process.env.ASSETS_DOMAIN}/public/05 - tech.png`} />
           </div>
@@ -221,7 +233,7 @@ const Solutions = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="zoom-in" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
             <h4 className="text-4xl font-bold text-blue-500">XR Mobile App</h4>
             <p className="text-xl">VR Box</p>
@@ -234,7 +246,7 @@ const Solutions = () => {
             <img src={`${process.env.ASSETS_DOMAIN}/public/06 - vrbox.png`} />
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center"  data-aos="fade-up" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 flex justify-end iframe-container border-box border-8 border-skBlue">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Q-NHEO2IS3s?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
@@ -249,7 +261,7 @@ const Solutions = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+        <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="fade-up" data-aos-anchor-placement="top-center">
           <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
             <h4 className="text-4xl font-bold text-blue-500">Stock Knowledge Enterprise</h4>
             <br />
@@ -299,7 +311,7 @@ const Solutions = () => {
               </p>
               <br />
               <Link href="/cart">
-                <a className="text-center rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12">
+                <a className="text-center rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12 hover:bg-blue-700">
                   BUY NOW
                 </a>
               </Link>
