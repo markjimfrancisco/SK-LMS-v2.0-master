@@ -17,6 +17,11 @@ import { usePostHttp } from "../hooks/postHttp";
 import { providers, useSession } from "next-auth/client";
 import { DoLogin, UserLogout } from "../redux/actions/UserAction";
 
+
+//Import for onscroll Animation **npm install aos first
+import Aos from "aos";
+import 'aos/dist/aos.css'
+
 export default function Home(props) {
   const [validTokenLoading, validToken] = usePostHttp(null, '/auth/validate');
 
@@ -108,6 +113,16 @@ export default function Home(props) {
     if (forgotpassword) setLoginModalOpen(true);
   }, [forgotpassword]);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+
+    // Add this CSS rule to disable the horizontal scrollbar
+    document.body.style.overflowX = 'hidden';
+    return () => {
+      document.body.style.overflowX = 'auto'; // Restore the default behavior of the horizontal scrollbar when the component unmounts
+    };
+  }, []);
+
   return (
  <>
       <Head>
@@ -144,7 +159,7 @@ export default function Home(props) {
             <br />
             <br />
             <Link href="/#contactus">
-              <a className="rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12">
+              <a className="rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12 hover:bg-blue-700">
                 REQUEST A DEMO
               </a>
             </Link>
@@ -162,26 +177,27 @@ export default function Home(props) {
       <div className="lg:w-full reno:w-full md:w-full sm:w-screen xs:w-screen xxs:w-screen p-6 h-1/4">
         <h1
           id="solution"
-          className="text-center lg:w-full md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading"
+          className="text-center lg:w-full md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl          
+          font-semibold" data-aos="fade-up"
         >
           Our Solutions
         </h1>
         <br />
-        <h4 className="text-lg text-center text-subheading lg:w-1/3 reno:w-1/3 md:w-1/3 sm:w-full xs:w-full xxs:w-full m-auto">
+        <h4 className="text-lg text-center text-subheading lg:w-1/3 reno:w-1/3 md:w-1/3 sm:w-full xs:w-full xxs:w-full my-0 mx-auto"  data-aos="fade-up">
           Our solutions aim to fulfill the needs of next generation learners in
           the country and across the globe
         </h4>
         <br />
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center" data-aos="fade-up">
           <Link href="/solutions">
-            <a className="text-center rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12">
+            <a className="text-center rounded-full bg-skBlue font-bold xl:text-xl lg:text-xl reno:text-xl md:text-md sm:text-xl xs:text-xl xxs:text-xl text-white py-4 px-12 hover:bg-blue-700">
               LEARN MORE ABOUT OUR OFFER
             </a>
           </Link>
         </div>
         <br />
       </div>
-      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right" data-aos-anchor-placement="top-center">
         <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/fullyimmersive.svg" />
         </div>
@@ -195,7 +211,7 @@ export default function Home(props) {
           </p>
         </div>
       </div>
-      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="fade-left">
         <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
           <h4 className="text-4xl font-bold text-blue-500">Gamification</h4>
           <p className="text-xl">
@@ -207,7 +223,7 @@ export default function Home(props) {
           <img src="images/gamification.svg" />
         </div>
       </div>
-      <div className="md:w-full md:flex-row xs:w-screen xxs:w-screen xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center">
+      <div className="md:w-full md:flex-row xs:w-screen xxs:w-screen xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right">
         <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
           <img src="images/device.svg" />
         </div>
@@ -221,7 +237,7 @@ export default function Home(props) {
           </p>
         </div>
       </div>
-      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center">
+      <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col-reverse xxs:flex-col-reverse p-6 h-1/4 flex items-center" data-aos="fade-left">
         <div className="md:w-1/2 px-14 md:text-right xs:text-center xxs:text-center">
           <h4 className="text-4xl font-bold text-blue-500">
             Adaptive Learning
@@ -247,6 +263,7 @@ export default function Home(props) {
         <div
           id="story"
           className="lg:w-1/2 text-white md:p-20 sm:p-20 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen xs:px-10 xxs:px-10 xs:py-8 xxs:py-8"
+          data-aos="zoom-in" data-aos-anchor-placement="top-center"
         >
           <h4 className="text-center lg:w-full md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-bold md:text-4xl">
             Our Story
@@ -274,7 +291,7 @@ export default function Home(props) {
             industry for the benefit of students and educators around the world.
           </p>
         </div>
-        <div className="lg:w-1/2 relative space-y-10 md:p-20 reno:p-20 lg:p-20 sm:p-6 xs:p-6 xxs:p-6 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen">
+        <div className="lg:w-1/2 relative space-y-10 md:p-20 reno:p-20 lg:p-20 sm:p-6 xs:p-6 xxs:p-6 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen" data-aos="fade-up" data-aos-anchor-placement="top-center">
           <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
             <h6 className="text-2xl font-bold text-blue-400">Mission</h6>
             <br />
@@ -305,6 +322,7 @@ export default function Home(props) {
       <div
         id="team"
         className="md:w-full xs:w-screen xxs:w-screen p-6 h-1/4 bg-blue-50 rounded-b-full"
+        data-aos="fade-up" data-aos-anchor-placement="top-center"
       >
         <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16">
           Our Team
@@ -325,18 +343,20 @@ export default function Home(props) {
       </div>
       <div
         id="testimonial"
-        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen space-y-14 lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16"
+        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen space-y-14 lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16" data-aos="slide-up"
       >
         <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16">
           From Our Partners
         </h1>
         <TestimonialLayout />
       </div>
-      <div className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen lg:items-center reno:items-start md:items-start sm:items-start xs:items-start xxs:items-start flex bg-blue-100 lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 p-4 lg:flex-row reno:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col">
-        <h6
-          id="partners"
-          className="lg:text-left lg:w-auto xs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading p-10"
-        >
+        <div
+          className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen lg:items-center reno:items-start md:items-start sm:items-start xs:items-start xxs:items-start flex bg-blue-100 lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 p-4 lg:flex-row reno:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col" 
+          data-aos="zoom-in-up">
+          <h6
+            id="partners"
+            className="lg:text-left lg:w-auto xs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading p-10"
+          >
           <span className="reno:block lg:hidden">Our Partners</span>
           <span className="lg:block reno:hidden md:hidden sm:hidden xs:hidden xxs:hidden">
             Our
@@ -354,7 +374,7 @@ export default function Home(props) {
       </div>
       <div
         id="articles"
-        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen"
+        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen" data-aos="fade-up"
       >
         <div className="text-center lg:w-full md:w-full reno:w-full sm:w-screen xs:w-sceen xxs:w-screen lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 mb-16">
           Media Mention
@@ -397,11 +417,14 @@ export default function Home(props) {
         </div>
         <br />
         <br />
+        <div data-aos="fade-up">
         <ArticleCarouselLayout />
+        </div>
       </div>
       <div
         id="contactus"
         className="md:w-full reno:w-full lg:w-full sm:w-screen xs:w-screen xxs:w-screen p-6 h-1/4 bg-blue-50 rounded-b-full"
+        data-aos="fade"
       >
         <h1 className="text-center w-full text-6xl font-semibold text-heading mt-16">
           Send us a message
@@ -468,7 +491,7 @@ export default function Home(props) {
               >
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <p className="text-subheading">(+63)917 523 0927</p>
+              <p className="text-subheading">(+63) 927-885-3760</p>
             </div>
 
             <div className="flex items-center text-blue-500 space-x-2">
