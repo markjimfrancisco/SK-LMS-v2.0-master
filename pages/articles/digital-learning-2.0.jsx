@@ -80,14 +80,14 @@ export default function DigitalLearning2(props) {
         showModal={setLoginModalOpen}
       />
       <div className="hero text-white px-20 py-10 space-y-2 md:w-full xs:w-screen">
-        <h1 className="xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-full reno:w-full sm:w-full xs:w-full font-bold">
+        <h1 className="xl:text-5xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-full reno:w-full sm:w-full xs:w-full font-bold" style={{ lineHeight: '1.1' }}>
           Digital Learning 2.0
         </h1>
         <p className="text-sm">By: Rome Salonga </p>
       </div>
       <div className="md:-mt-5 xs:-mt-4 md:mb-8 xl:w-full lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen">
         <img
-          className="mx-auto w-3/4"
+          className="mx-auto mt-20"
           src="/images/articles/digital-learning-2.0/header-img.svg"
         />
       </div>
@@ -98,7 +98,7 @@ export default function DigitalLearning2(props) {
             <FacebookIcon size={36} />
           </FacebookShareButton>
         </div>
-        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed">
+        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed text-justify">
           <p className="leading-relaxed">
             Love is lovelier the second time around… and so is learning. With
             the success of our first forum, comes another to empower digital

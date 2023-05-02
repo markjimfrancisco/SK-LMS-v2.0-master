@@ -85,15 +85,15 @@ export default function LearningInTheDigitalAge(props) {
         path="Learning in the Digital Age: Gearing Towards Education 4.0"
         showModal={setLoginModalOpen}
       />
-      <div className="hero text-white px-20 py-10 space-y-2 md:w-full xs:w-screen">
-        <h1 className="xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-3/4 reno:w-3/4 sm:w-full xs:w-full font-bold">
+      <div className="hero text-white px-10 py-10 space-y-2 md:w-full xs:w-screen">
+        <h1 className="xl:text-6xl lg:text-5xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-full reno:w-full sm:w-full xs:w-full font-bold" style={{ lineHeight: '1.1' }}>
           Learning in the Digital Age: Gearing Towards Education 4.0
         </h1>
         <p className="text-sm">By: Rome Salonga </p>
       </div>
       <div className="md:-mt-5 xs:-mt-4 md:mb-8 xl:w-full lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen">
         <img
-          className="mx-auto w-3/4"
+          className="mx-auto mt-20"
           src="/images/articles/learning-in-the-digital-age/header-img.svg"
         />
       </div>
@@ -104,7 +104,10 @@ export default function LearningInTheDigitalAge(props) {
             <FacebookIcon size={36} />
           </FacebookShareButton>
         </div>
-        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed">
+        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed text-justify">
+        <br/> 18 November 2019
+            <br />
+            <br />
           <p className="leading-relaxed">
             On the 18th of November 2019, Stock Knowledge made an anticipated
             visit to the University of the Philippines Los Baños to further

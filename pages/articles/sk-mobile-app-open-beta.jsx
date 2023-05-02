@@ -89,8 +89,8 @@ export default function MobileAppOpenBeta(props) {
         path="Stock Knowledge XR Mobile App (Open Beta) Is Now Available for Download!"
         showModal={setLoginModalOpen}
       />
-      <div className="hero text-white px-20 py-10 space-y-2 md:w-full xs:w-screen">
-        <h1 className="xl:text-6xl lg:text-6xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-full reno:w-full sm:w-full xs:w-full font-bold">
+      <div className="hero text-white px-10 py-10 space-y-2 md:w-full xs:w-screen">
+        <h1 className="xl:text-6xl lg:text-5xl md:text-6xl sm:text-xl xs:text-xl xl:w-3/4 lg:w-3/4 md:w-full reno:w-full sm:w-full xs:w-full font-bold" style={{ lineHeight: '1.1' }}>
           Stock Knowledge XR Mobile App (Open Beta) Is Now Available for
           Download!
         </h1>
@@ -98,7 +98,7 @@ export default function MobileAppOpenBeta(props) {
       </div>
       <div className="md:-mt-5 xs:-mt-4 md:mb-8 xl:w-full lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen">
         <img
-          className="mx-auto w-3/4"
+          className="mx-auto mt-24"
           src="/images/articles/sk-mobile-app-open-beta/header-img.svg"
         />
       </div>
@@ -111,7 +111,7 @@ export default function MobileAppOpenBeta(props) {
             </FacebookShareButton>
           </div>
         </div>
-        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed">
+        <div className="xl:w-11/12 lg:w-11/12 md:w-11/12 reno:w-11/12 sm:w-full xs:w-full leading-relaxed text-justify">
           <h1 className="text-lg text-blue-500 font-bold">
             A Unique Learning Experience for Students and Teachers
           </h1>
