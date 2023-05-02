@@ -109,6 +109,7 @@ const SignupForm = ({ setForm }) => {
           confirmPassword={confirmPassword}
           setConfirmPassword={setConfirmPassword}
           setStep={setStep}
+          setForm={setForm}
         />
       )}
       {step === 2 && (

@@ -9,6 +9,13 @@ import ConfirmPasswordInput from "../ConfirmPasswordInput";
 import PasswordInput from "../PasswordInput";
 import { useDispatch, useSelector } from "react-redux";
 
+import TermsAndPolicyComponents from "./TermsAndPolicyComponents";
+import FormWrapper from "./FormWrapper";
+
+
+import { useRouter } from "next/dist/client/router";
+import Router from "next/router";
+
 const NameInfomationComponents = ({
   firstName,
   setFirstName,
@@ -24,8 +31,11 @@ const NameInfomationComponents = ({
   setPassword,
   confirmPassword,
   setConfirmPassword,
-  setStep
+  setStep,
+  setForm
 }) => {
+
+  const router = useRouter();
 
   const user = useSelector((state) => state.UserReducer);
   const dispatch = useDispatch();
@@ -42,7 +52,7 @@ const NameInfomationComponents = ({
       password == confirmPassword &&
       userAgree &&
       firstName &&
-      middleName &&
+      // middleName && //Commented this one to disable the middle name being required fiedld. 
       lastName &&
       firstName.match(/^[A-Za-z ]*/)[0] == firstName &&
       middleName.match(/^[A-Za-z ]*/)[0] == middleName &&
@@ -64,6 +74,11 @@ const NameInfomationComponents = ({
       setDisable(false);
     else setDisable(true);
   });
+
+  const handleClick = () =>{
+    router.push('/terms-and-policy?terms=true')
+
+  }
 
   return (
     <>
@@ -121,7 +136,7 @@ const NameInfomationComponents = ({
             alert={true}
             alertClassName="lg:w-full md:w-full sm:w-full xs:w-11/12 xxs:w-11/12 lg:mt-2 md:mt-2 sm:mt-4 xs:mt-4 xxs:mt-4 px-4 py-3 rounded"
             alertValidStyle="border border-green-400 text-green-700"
-            alertInvalidStyle="border border-red-400 text-red-700"
+            alertInvalidStyle="text-red-500" //change from border border-red-400 text-red-700
             iconTop={"top-1"}
             classNames="lg:w-full md:w-full sm:w-full xs:w-11/12 md:w-full sm:w-full xs:w-11/12 xxs:w-11/12 mt-3 rounded-xl border border-lightGray placeholder-lightGray"
             value={password}
@@ -152,7 +167,12 @@ const NameInfomationComponents = ({
           className="text-subheading xs:text-sm xxs:text-sm"
         >
           I agree to the&nbsp;
-          <a className="text-skBlue hover:text-skBlueInactive" href="/terms-and-policy?terms=true" target="_blank">
+          {/* <a className="text-skBlue hover:text-skBlueInactive" href="/terms-and-policy?terms=true" target="_blank"> */}
+            {/*Added*/}  
+          <a onClick={() => {
+          setForm("term-and-policy");
+          }}
+          className="text-skBlue hover:text-skBlueInactive"> 
             Terms of Service & Privacy Policy
           </a>
         </label>

@@ -33,6 +33,7 @@ export default function EmailField({
         id="email"
         className={classNames}
         type="text"
+        maxLength={50} //Added
         placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}

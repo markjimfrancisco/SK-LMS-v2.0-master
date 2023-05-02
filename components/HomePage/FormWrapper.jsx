@@ -7,7 +7,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import TermsAndPolicyComponents from "./TermsAndPolicyComponents";
 
-const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
+const FormWrapper = ({ defaultForm, providers, session, code, showModal, terms, policy }) => {
   const user = useSelector((state) => state.UserReducer);
 
   const [form, setForm] = useState(defaultForm);
@@ -40,7 +40,7 @@ const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
             {showModal && (
               <svg
                 onClick={(e) => showModal(false)}
-                className="absolute right-0 w-8 h-8 mr-4 mt-4 text-blue-500"
+                className="absolute right-0 w-8 h-8 mr-4 mt-4 text-black-500"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -96,7 +96,12 @@ const FormWrapper = ({ defaultForm, providers, session, code, showModal }) => {
                         setForm={setForm}
                       />
                     )}
-                  {form === "term-and-policy" && <TermsAndPolicyComponents />}
+                  {/* {form === "term-and-policy" && <TermsAndPolicyComponents />} */}
+                  {form === "term-and-policy" && (
+                    <TermsAndPolicyComponents 
+                    setForm={setForm}
+                    />
+                    )}
                 </div>
               </div>
             </div>

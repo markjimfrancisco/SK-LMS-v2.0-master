@@ -142,7 +142,7 @@ export default function PasswordInput({
             Password Strenght: {validPassword ? "Strong" : "Weak"}
           </strong>
           {!validPassword && (
-            <ul className="list-disc text-sm p-2">
+            <ul className="list-disc text-sm p-2 text-gray-500">
               {!/([A-ZÑ])+/.test(value) && (
                 <li>
                   Password must contain atleast 1 upper case letters (A - Z)

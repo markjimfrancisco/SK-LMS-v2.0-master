@@ -205,7 +205,7 @@ const SignupDetailsComponents = ({
           type="checkbox"
           name="useragree"
         />
-        <label
+        {/* <label
           for="useragree"
           className="text-lightGray xs:text-sm xxs:text-sm hover:text-subheading"
         >
@@ -215,7 +215,7 @@ const SignupDetailsComponents = ({
               Terms of Service & Privacy Policy
             </a>
           </a>
-        </label>
+        </label> */}
       </div>
       <button
         disabled={disable ? true : false}

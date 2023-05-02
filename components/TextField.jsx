@@ -32,6 +32,7 @@ export default function TextField({
       <input
         id={id}
         type="text"
+        maxLength={50} //Added
         className={classNames}
         placeholder={placeholder}
         value={value}

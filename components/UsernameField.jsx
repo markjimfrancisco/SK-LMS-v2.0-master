@@ -14,6 +14,7 @@ export default function UsernameField({classNames, placeholder, value, setValue}
           id="username"
           className={classNames}
           type="text"
+          maxLength={50} //Added
           placeholder={placeholder}
           value={value} 
           onChange={e => setValue(e.target.value)} 

@@ -22,7 +22,7 @@ const NavBar = ({ showModal }) => {
       }}
       icon={faShoppingCart}
       size="lg"
-      className="text-skBlue cursor-pointer"
+      className="text-skBlue cursor-pointer transform hover:bg-transparent transition duration-500 hover:scale-125"
     />
   );
 
@@ -34,7 +34,7 @@ const NavBar = ({ showModal }) => {
         href="/"
         className="lg:w-1/4 md:w-1/12 flex items-center text-xl text-heading space-x-2"
       >
-        <img className="w-12" src="/images/logo.png" />
+        <img className="w-12 transform hover:bg-transparent transition duration-500 hover:scale-125" src="/images/logo.png" />
         <h4 className="lg:flex md:hidden">
           Stock &nbsp;<span className="font-bold text-skBlue">Knowledge</span>
         </h4>
@@ -124,7 +124,7 @@ const NavBar = ({ showModal }) => {
                 onClick={(e) => {
                   showModal(true);
                 }}
-                className="bg-skBlue rounded-full font-bold text-base text-white py-2 px-4"
+                className="bg-skBlue rounded-full font-bold text-base text-white py-2 px-4 hover:bg-blue-700"
               >
                 Login
               </button>

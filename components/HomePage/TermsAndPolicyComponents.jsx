@@ -1,23 +1,47 @@
 import { useRouter } from "next/dist/client/router";
+import Router from "next/router";
 import { useEffect, useState } from "react";
 import PrivacyPolicyArticle from "./PrivacyPolicyArticle";
 import TermsOfUseArticle from "./TermOfUseArticle";
+import {
+  faArrowLeft
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TermsAndPolicyComponents = (props) => {
   const router = useRouter();
 
-  const { terms, policy } = router.query;
+  // const { terms, policy } = router.query;
+  const { setForm } = props;
+
+  const { terms, policy } = router.query; 
   const [article, setArticle] = useState("terms");
+
+  const backIcon =(
+    <FontAwesomeIcon
+      icon={faArrowLeft}
+      size="lg"
+      color="skBlue"
+      className={`cursor-pointer hover:text-subheading m-auto`}
+  />
+  );
 
   useEffect(() => {
     if (terms) setArticle("terms");
-
     if (policy) setArticle("policy");
   }, [terms, policy]);
 
   return (
     <>
-      <div className="w-11/12 h-full m-auto flex flex-col items-center mt-10">
+      <div className="w-11/12 h-full m-auto flex flex-col items-center mt-10 ">
+      <div className="w-11/12 flex mb-8  ">
+        <span onClick={() => {
+          setForm("signup");
+          router.replace('/')
+        }} className="text-blue-400 text-lg font-bold hover:text-skBlueInactive cursor-pointer">
+           {backIcon}
+        </span>   
+      </div>
         <div className="w-full flex text-center">
           <div
             onClick={() => {
