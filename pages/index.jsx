@@ -98,7 +98,30 @@ export default function Home(props) {
     if (user.isLogin && user.data && !user.data.verified)
       setLoginModalOpen(true);
   }, [user]);
+  function funcContactUs(){
+    var givenName = document.getElementById('givName').value;
+    var givenEmail = document.getElementById('givEmail').value;
+    var givenMessage = document.getElementById('givMessage').value;
+    var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (givenName == ""){
+      alert("Please input name");
+    }
+    if (!givenEmail.match(emailRegex)||givenEmail == ""){
+      if (givenEmail == ""){
+        alert("Please input E-mail");
+      }
+      else{
+        alert("Invalid Email. Please input a valid E-mail");
+      }
+    }
+    if (givenMessage==""){
+      alert("Please input message");
+    }
+    if (givenEmail.match(emailRegex) && givenName !="" && givenMessage != ""){
+      setToSubmit(true);
+    }
 
+  }
   useEffect(() => {
     if (requestData) {
       setToSubmit(false);
@@ -198,7 +221,7 @@ export default function Home(props) {
         <br />
       </div>
       <div className="md:w-full xs:w-screen xxs:w-screen md:flex-row xs:flex-col xxs:flex-col p-6 h-1/4 flex items-center" data-aos="fade-right" data-aos-anchor-placement="top-center">
-        <div className="md:w-1/2 flex justify-end px-14 transform hover:bg-white transition duration-500 hover:scale-105">
+        <div className="md:w-1/2 flex justify-end px-14">
           <img src="images/fullyimmersive.svg" />
         </div>
         <div className="md:w-1/2 px-14 md:text-left xs:text-center xxs:text-center">
@@ -219,7 +242,7 @@ export default function Home(props) {
             engaging way
           </p>
         </div>
-        <div className="md:w-1/2 px-14 transform hover:bg-white transition duration-500 hover:scale-105">
+        <div className="md:w-1/2 px-14 ">
           <img src="images/gamification.svg" />
         </div>
       </div>
@@ -252,10 +275,10 @@ export default function Home(props) {
         </div>
       </div>
       <div
-        className="md:w-full md:flex-row sm:w-screen xs:w-screen xxs:w-screen lg:h-1/4 md:h-1/4 xs:h-auto xxs:h-auto reno:h-1/4 flex mt-32 lg:flex-row md:flex-col reno:flex-col sm:flex-col xs:flex-col xxs:flex-col"
+        className="md:w-full sm:w-screen xs:w-screen xxs:w-screen lg:h-1/4 md:h-1/4 xs:h-auto xxs:h-auto reno:h-1/4 flex mt-32 lg:flex-row md:flex-col reno:flex-col sm:flex-col xs:flex-col xxs:flex-col"
         style={{
           background:
-            "url('images/bg-cta-1.svg') rgba(24, 79, 136, 0.5) no-repeat",
+            "url('images/bg-cta-1.png') rgba(24, 79, 136, 0.5) no-repeat",
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
         }}
@@ -265,12 +288,12 @@ export default function Home(props) {
           className="lg:w-1/2 text-white md:p-20 sm:p-20 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen xs:px-10 xxs:px-10 xs:py-8 xxs:py-8"
           data-aos="zoom-in" data-aos-anchor-placement="top-center"
         >
-          <h4 className="text-center lg:w-full md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-bold md:text-4xl">
+          <h4 className="text-center lg:w-full md:w-full reno:w-full sm:w-full xs:w-full xxs:w-full lg:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-bold md:text-4xl">
             Our Story
           </h4>
           <br />
           <br />
-          <p className="lg:text-2xl md:text-lg xs:text-base xxs:text-base">
+          <p className="lg:text-2xl text-justify md:text-lg xs:text-base xxs:text-base">
             Educator and physicist Anna Marie Benzon launched Stock Knowledge to
             focus on how young learners could foster better appreciation for
             their school subjects after realizing that traditional methods were
@@ -291,44 +314,47 @@ export default function Home(props) {
             industry for the benefit of students and educators around the world.
           </p>
         </div>
-        <div className="lg:w-1/2 relative space-y-10 md:p-20 reno:p-20 lg:p-20 sm:p-6 xs:p-6 xxs:p-6 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen" data-aos="fade-up" data-aos-anchor-placement="top-center">
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
-            <h6 className="text-2xl font-bold text-blue-400">Mission</h6>
-            <br />
-            <p>
+
+        <div className="lg:w-1/2 relative space-y-10 md:p-20 reno:p-20 lg:p-20 sm:p-6 xs:p-6 xxs:p-6 md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen grid place-items-center" data-aos="fade-up" data-aos-anchor-placement="top-center">
+          
+        <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto grid place-items-center">
+            <h6 className="text-3xl font-bold text-blue-400">Mission</h6>
+            <p className="text-md">
               Empower learners and educators by creating accessible,
               cutting-edge digital tools.
             </p>
           </div>
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
-            <h6 className="text-2xl font-bold text-blue-400">Vision</h6>
-            <br />
-            <p>
+
+          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto grid place-items-center">
+            <h6 className="text-3xl font-bold text-blue-400 ">Vision</h6>
+            <p className="text-md">
               Be the leading EdTech company in today's digital transformation
               age.
             </p>
           </div>
-          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto transform hover:bg-white transition duration-500 hover:scale-105">
-            <h6 className="text-2xl font-bold text-blue-400">Core Values</h6>
-            <br />
-            <p>
-              We are a mission-driven team that takes pride in efficient and
-              ethical work, anchored on the highest degree of Excellence,
-              Efficiency, Integrity, Creativity, and Loyalty.
+
+          <div className="py-2 px-4 w-full border text-subheading bg-white rounded-lg lg:h-36 md:h-36 reno:h-36 sm:h-auto grid place-items-center">
+            <h6 className="text-3xl font-bold text-blue-400 ">Core Values</h6>
+            <p className="text-md">
+                We are a mission-driven team that takes pride in efficient and
+                ethical work, anchored on the highest degree of Excellence,
+                Efficiency, Integrity, Creativity, and Loyalty.
             </p>
-          </div>
         </div>
+
+        </div>
+
       </div>
       <div
         id="team"
         className="md:w-full xs:w-screen xxs:w-screen p-6 h-1/4 bg-blue-50 rounded-b-full"
         data-aos="fade-up" data-aos-anchor-placement="top-center"
       >
-        <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16">
+        <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading md:mt-32 reno:mt-32  lg:mt-16">
           Our Team
         </h1>
         <br />
-        <h4 className="lg:text-lg md:text-lg lg:text-lg xs:text-base xxs:text-base text-center text-subheading w-3/4 m-auto">
+        <h4 className="lg:text-lg md:text-lg xs:text-base xxs:text-base text-center text-subheading w-3/4 m-auto">
           Behind the team are empowered individuals comprising scientists,
           engineers, educators, and entrepreneurs who were meticulously selected
           to perform and align with the Corporation’s mission, vision, values
@@ -343,82 +369,249 @@ export default function Home(props) {
       </div>
       <div
         id="testimonial"
-        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen space-y-14 lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16" data-aos="slide-up"
+        className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen space-y-14 md:mt-32 reno:mt-32 lg:mt-16 mb-10" data-aos="slide-up"
       >
-        <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 lg:mt-16 lg:mt-16">
+        <h1 className="text-center w-full lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading md:mt-32 reno:mt-32 lg:mt-16">
           From Our Partners
         </h1>
         <TestimonialLayout />
       </div>
+
+      {/* Partner Section */}
+      <div className="bg-blue-100 p-10 py-14" data-aos="zoom-in-up"  id="partners">
         <div
-          className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen lg:items-center reno:items-start md:items-start sm:items-start xs:items-start xxs:items-start flex bg-blue-100 lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 p-4 lg:flex-row reno:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col" 
-          data-aos="zoom-in-up">
-          <h6
-            id="partners"
-            className="lg:text-left lg:w-auto xs:w-full lg:text-6xl reno:text-6xl md:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading p-10"
-          >
-          <span className="reno:block lg:hidden">Our Partners</span>
-          <span className="lg:block reno:hidden md:hidden sm:hidden xs:hidden xxs:hidden">
-            Our
-            <br />
-            Partners
-          </span>
-        </h6>
-        <div className="lg:w-3/4 reno:w-full md:w-full sm:w-full xs:w-full xxs:w-full lg:px-0 md:px-20 reno:px-52 flex justify-around flex-wrap lg:pb-0 reno:pb-10 md:pb-10 sm:pb-10 xs:pb-10 xxs:pb-10">
-          <img className="w-40 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/unicef.svg" />
-          <img className="transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/QBO.svg" />
-          <img className="transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/AIM.svg" />
-          <img className="w-24 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/deped-manila.svg" />
-          <img className="w-24 transform hover:bg-transparent transition duration-500 hover:scale-105" src="/images/deped-makati.svg" />
-        </div>
+            className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-2xl lg:px-6">
+
+            <h1
+              className="text-center my-auto lg:text-center font-bold text-4xl sm:text-5xl leading-none mb-6">
+              Our Partners
+            </h1>
+
+            {/* Row 1 */}
+            <div className="flex flex-wrap justify-center items-center mt-16 text-gray-500 sm:justify-between">
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105"
+                alt="Unicef Innovation"
+                src="/images/partners/unicef.svg" />
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105"
+                alt="AWS"
+                src="/images/partners/aws_logo.svg" />
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105"
+                alt="Microsoft"
+                src="/images/partners/microsoft.png" />
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="World Economic Forum" 
+                src="/images/partners/world_economic_forum.png" />
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="QBO" 
+                src="/images/partners/QBO.svg" />    
+
+            <img className="ml-10 mr-5 mb-5 w-20 transform hover:bg-transparent transition duration-500 hover:scale-105"
+                alt="Federation of Filipino-Chinese Chambers of Commerce & Industry Inc."
+                src="/images/partners/federation_commerce.png" />                                    
+
+            </div>     
+
+            {/* Row 2 */}
+            <div className="flex flex-wrap justify-center items-center mt-16 text-gray-500 sm:justify-between">  
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="World Economic Forum" 
+                src="/images/partners/AIM.svg" />             
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="World Economic Forum" 
+                src="/images/partners/UE.png" />          
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="World Economic Forum" 
+                src="/images/partners/jru.png" />            
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                alt="World Economic Forum" 
+                src="/images/partners/manila_science_hs.png" />    
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                  alt="World Economic Forum" 
+                  src="/images/partners/deped-makati.svg" />  
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                  alt="World Economic Forum" 
+                  src="/images/partners/deped-manila.svg" />            
+
+              <img className="ml-10 mr-5 mb-5 w-28 transform hover:bg-transparent transition duration-500 hover:scale-105" 
+                  alt="World Economic Forum" 
+                  src="/images/partners/tuguegarao_hs.png" />                         
+
+            </div>                 
+
+        </div>  
       </div>
+        
       <div
         id="articles"
         className="lg:w-full md:w-full reno:w-full sm:w-screen xs:w-screen xxs:w-screen" data-aos="fade-up"
       >
-        <div className="text-center lg:w-full md:w-full reno:w-full sm:w-screen xs:w-sceen xxs:w-screen lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading lg:mt-32 md:mt-32 reno:mt-32 sm:mt-16 xs:mt-16 xxs:mt-16 mb-16">
-          Media Mention
-          <div className="relative top-11 w-full text-xl flex lg:items-center justify-center space-x-8">
-            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
-              <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
-              target="_blank">
-                  <img src="images/manila-bulletin.png"/>
-              </a>
-              <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
-              className="hover:text-skBlue text-sm"
-              target="_blank">
-                Local EdTech startup Finally Seeing the Light of Day via
-                Government Support Amid COVID-19
-              </a>
+
+
+        <section className="bg-white pt-24 px-8"
+          >
+          <div className="mx-auto px-8 max-w-7xl">
+            <h1
+              className="text-center lg:text-6xl md:text-6xl reno:text-6xl sm:text-4xl xs:text-4xl xxs:text-4xl font-semibold text-heading mb-6">
+              Media Mention
+            </h1>
+
+            <div
+            className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 place-items-center"  
+            id="frameworks-integration">
+
+              {/* Article One */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://www.bworldonline.com/sparkup/2023/07/10/532964/phl-based-edtech-company-among-world-economic-forums-technology-pioneers/#google_vignette"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/business_world_2023.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://www.bworldonline.com/sparkup/2023/07/10/532964/phl-based-edtech-company-among-world-economic-forums-technology-pioneers/#google_vignette">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        PHL-based edtech company among World Economic Forum’s Technology Pioneers
+                    </h5>
+                  </a>
+                </div>
+              </div>
+              {/* Article Two */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://www.weforum.org/agenda/2023/06/meet-the-world-economic-forum-s-technology-pioneers-of-2023/"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/weforum_2023.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://www.weforum.org/agenda/2023/06/meet-the-world-economic-forum-s-technology-pioneers-of-2023/">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        Meet the World Economic Forum’s Technology Pioneers of 2023
+                    </h5>
+                  </a>
+                </div>
+              </div>   
+              {/* Article Three */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://businessmirror.com.ph/2023/11/11/stock-knowledge-is-one-of-wefs-2023-tech-pioneers/"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/business_mirror_2023.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://businessmirror.com.ph/2023/11/11/stock-knowledge-is-one-of-wefs-2023-tech-pioneers/">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        Stock Knowledge is one of WEF’s 2023 ‘tech pioneers’
+                    </h5>
+                  </a>
+                </div>
+              </div>                        
+
             </div>
-            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
-              <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
-              target="_blank">
-                  <img src="images/newsbytes.png"/>
-              </a>
-              <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
-              className="hover:text-skBlue text-sm"
-              target="_blank">
-                PH startup pilots ‘gamified’ edtech platform in DepEd Makati, Manila
-              </a>
+
+            <div
+            className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 place-items-center"  
+            id="frameworks-integration">
+
+              {/* Article One */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/manila-bulletin.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://mb.com.ph/2021/05/09/local-edtech-startup-finally-seeing-the-light-of-day-via-government-support-amid-covid-19/">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        Local EdTech startup Finally Seeing the Light of Day via
+                        Government Support Amid COVID-19
+                    </h5>
+                  </a>
+                </div>
+              </div>
+              {/* Article Two */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/newsbytes.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://newsbytes.ph/2021/05/12/ph-startup-pilots-gamified-edtech-platform-in-deped-makati-manila/?fbclid=IwAR2FNwyzni-Mp4FLjZ19hhqq9tyoqj8-QUP2rDv85GhLjCFpZdUg7bQezrM">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        PH startup pilots ‘gamified’ edtech platform in DepEd Makati, Manila
+                    </h5>
+                  </a>
+                </div>
+              </div>   
+              {/* Article Three */}
+              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                <a
+                  href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
+                  className="">
+                  <img
+                    className=""
+                    src="images/media-mention/business_mirror.png"
+                    alt=""
+                  />
+                </a>
+
+                <div className="p-5">
+                  <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/">
+                    <h5
+                      className="hover:text-skBlue text-sm">
+                        Stock Knowledge, DepEd Makati join forces to launch EdTech platform
+                    </h5>
+                  </a>
+                </div>
+              </div>                        
+
             </div>
-            <div className="rounded-lg h-72 w-96 shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-105">
-              <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
-              target="_blank">
-                  <img src="images/business_mirror.png"/>
-              </a>
-              <a href="https://businessmirror.com.ph/2021/06/26/stock-knowledge-deped-makati-join-forces-to-launch-edtech-platform/"
-              className="hover:text-skBlue text-sm"
-              target="_blank">
-                Stock Knowledge, DepEd Makati join forces to launch EdTech platform
-              </a>
-            </div>
+
           </div>
-        </div>
-        <br />
-        <br />
+          </section>
+
         <div data-aos="fade-up">
-        <ArticleCarouselLayout />
+          <ArticleCarouselLayout />
         </div>
       </div>
       <div
@@ -441,6 +634,8 @@ export default function Home(props) {
                   Name:
                 </label>
                 <input
+                  id="givName"
+                  name="givName"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full text-subheading"
@@ -453,6 +648,8 @@ export default function Home(props) {
                   Email:
                 </label>
                 <input
+                  id="givEmail"
+                  name="givEmail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full border-subheading"
@@ -466,6 +663,8 @@ export default function Home(props) {
                 </label>
                 <br />
                 <textarea
+                  id="givMessage"
+                  name="givMessage"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full text-subheading"
@@ -473,7 +672,7 @@ export default function Home(props) {
               </div>
               <input
                 onClick={() => {
-                  setToSubmit(true);
+                  funcContactUs();
                 }}
                 className="w-full h-10 bg-blue-500 rounded-full text-white uppercase"
                 type="submit"

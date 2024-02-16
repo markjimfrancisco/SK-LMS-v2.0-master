@@ -2,12 +2,11 @@ const ArticleCarouselContent = (props) => {
   const { slide } = props;
 
   return (
-    <div className="relative overflow-hidden w-full text-center flex justify-around space-x-10">
-      {slide &&
-        slide.map((article) => {
+    <div className="relative overflow-visible w-full text-center flex justify-around space-x-10">
+      {slide?.map((article) => {
           return (
-            <div key={article.id} className="w-screen md:w-full lg:w-full space-y-4">
-              <div className="bg-white h-full shadow-xl hover:shadow-2xl transform hover:bg-transparent transition duration-500 hover:scale-90 w-full">
+            <div key={article.id} className="w-screen md:w-full lg:w-full space-y-4 border border-gray-200 rounded-lg shadow-md overflow-visible">
+              <div className="h-full w-full">
                 <img className="w-full" src={article.image} alt="" />
                 <div className="p-4">
                   <div className="text-left">
@@ -25,6 +24,7 @@ const ArticleCarouselContent = (props) => {
                       <br />
                       <br />
                       <p className="text-blue-500 md:text-sm sm:xs:text-xs xxs:text-xs">Read More</p>
+                      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                       <svg
                         className="h-5"
                         xmlns="http://www.w3.org/2000/svg"
